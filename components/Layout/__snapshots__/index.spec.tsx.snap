@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component should render properly 1`] = `
+<DocumentFragment>
+  <a
+    class="govuk-skip-link"
+    href="#content"
+  >
+    Skip to main content
+  </a>
+  HeaderMockedPhaseBanner
+  <div
+    class="govuk-width-container"
+  >
+    <main
+      class="govuk-main-wrapper"
+      id="content"
+      role="main"
+    >
+      <p>
+        I am the children
+      </p>
+    </main>
+  </div>
+  <footer
+    class="footer"
+    role="contentinfo"
+  >
+    <div
+      class="govuk-width-container"
+    >
+      <nav
+        class="links"
+      >
+        <a
+          href="https://sites.google.com/hackney.gov.uk/moderntoolsforsocialcare/home"
+        >
+          Roadmap
+        </a>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScILbPD1ioKHzp1D3HN4_DKaxV2tpWLMu8upSSqNgSPCo85cg/viewform"
+        >
+          Give feedback
+        </a>
+      </nav>
+      <div
+        class="meta"
+      >
+        Built and maintained by HackIT.
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should set active the correct link 1`] = `
+<DocumentFragment>
+  <header
+    class="lbh-header "
+  >
+    <div
+      class="lbh-header__main"
+    >
+      <div
+        class="lbh-container lbh-header__wrapper"
+      >
+        <div
+          class="lbh-header__title"
+        >
+          <a
+            class="lbh-header__title-link"
+            href="/"
+          >
+            MockedLogo
+            <span
+              class="lbh-header__logo-text"
+            >
+               Hackney 
+            </span>
+            <span
+              class="lbh-header__service-name"
+            >
+              Foo
+            </span>
+            <span
+              class="govuk-tag lbh-tag lbh-tag--green"
+            >
+              Admin
+            </span>
+          </a>
+        </div>
+        <nav
+          aria-label="Navigation menu"
+          class="lbh-header__links"
+        >
+          <a
+            class="govuk-header__link"
+            href="/search"
+          >
+            Search
+          </a>
+          <a
+            class="govuk-header__link"
+            href="/"
+          >
+            My work space
+          </a>
+          <a
+            class="govuk-header__link"
+            href="/logout"
+          >
+            Sign out
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
