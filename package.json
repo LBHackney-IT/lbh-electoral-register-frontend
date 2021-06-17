@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx && echo 'Lint complete.'",
     "format": "prettier '**/*.{js,jsx,ts,tsx,css,scss,md}' --write --list-different",
+    "type-check": "tsc",
     "test": "jest"
   },
   "dependencies": {
