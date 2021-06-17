@@ -43,3 +43,12 @@ jobs:
       - run:
           name: Run tests
           command: npm test -- -w 2
+
+workflows:
+  version: 2
+  continuous-delivery:
+    jobs:
+      - install-dependencies
+      - tests:
+          requires:
+            - install-dependencies
