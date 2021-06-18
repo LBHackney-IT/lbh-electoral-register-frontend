@@ -22,3 +22,4 @@ describe('Header component', () => {
     );
     expect(getByText('Foo')).toBeInTheDocument();
   });
+});
