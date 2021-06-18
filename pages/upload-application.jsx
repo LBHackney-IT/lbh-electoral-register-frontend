@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import FileUpload from 'components/form/FileUpload/FileUpload';
 import Button from 'components/form/Button/Button';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 
 const UploadApplication = () => {
@@ -19,7 +19,6 @@ const UploadApplication = () => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        console.log(file);
         if (file) {
             router.push('/form/register-applicant/name');
         } else {
@@ -52,14 +51,9 @@ const UploadApplication = () => {
                 />
                 <Button
                     onClick={ onFormSubmit }
-                    // onClick={ router.push('/form/register-applicant/name') }
-                    // onClick={console.log('hello')}
                     type='submit'
                     label='Submit'
                 ></Button>
-                {/* <a href="/form/register-applicant/name" className="govuk-button lbh-button">
-                    Submit
-                </a> */}
             </form>
         </div>
     );

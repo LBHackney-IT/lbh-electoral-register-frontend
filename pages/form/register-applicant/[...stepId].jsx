@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import { useContext } from "react";
 import uuid from "react-uuid";
-import UserContext from 'components/UserContext/UserContext';
 import FormWizard from "components/FormWizard/FormWizard";
 import form from "data/forms/register-applicant";
-import { useRouter } from "next/router";
-import { postJsonToS3 } from "utils/api/postJsonToS3";
 import { Document, Page, pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const RegisterApplicant = () => {
-  //const { user } = useContext(UserContext);
   const currentDateTime = () => {
     var today = new Date();
     var date =
@@ -27,17 +22,9 @@ const RegisterApplicant = () => {
   const processFormData = async (formData) => {
     formData.urn = uuid();
     formData.time_created = currentDateTime();  
-    // try {
-    //   const response = await postJsonToS3(formData);
-    //   console.log("response from form " + response);
-    // } catch (e) {
-    //   console.log("error" + JSON.stringify(e.response));
-    // }
   };
 
   const onFormSubmit = (formData) => processFormData(formData);
-  const router = useRouter();
-  const { stepId } = router.query;
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -52,8 +39,9 @@ const RegisterApplicant = () => {
   }
 
   const prevPage = () => {
-    if (pageNumber > 1)
-    setPageNumber(pageNumber - 1)
+    if (pageNumber > 1) {
+      setPageNumber(pageNumber - 1)
+    }
   }
 
   return (
