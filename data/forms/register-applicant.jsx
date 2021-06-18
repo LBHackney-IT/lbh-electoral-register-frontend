@@ -1,7 +1,5 @@
 import NATIONALITIES from 'data/nationalities'
 
-Date.today;
-
 export default {
     title: 'Applicant Register To Vote Form',
     path: '/form/register-applicant/',
@@ -42,11 +40,6 @@ export default {
                     name: 'address_ln2',
                     rules: { required: false },
                 },
-                // {
-                //     component: 'TextInput',
-                //     name: 'address_ln3',
-                //     rules: { required: false },
-                // },
                 {
                     component: 'TextInput',
                     name: 'postcode',
