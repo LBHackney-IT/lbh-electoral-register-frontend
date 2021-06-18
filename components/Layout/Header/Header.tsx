@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-
 import Logo from './Logo';
 
 const HeaderComponent = ({
@@ -8,7 +5,6 @@ const HeaderComponent = ({
 }: {
   serviceName: string;
 }): React.ReactElement => {
-  const { pathname } = useRouter();
 
   return (
     <header className="lbh-header ">
