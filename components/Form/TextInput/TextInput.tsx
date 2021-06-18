@@ -1,7 +1,5 @@
 import cx from 'classnames';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
-
 import type { TextInput as Props } from 'components/Form/types';
 import { FieldErrorMessage } from '../FieldErrorMessage/FieldErrorMessage';
 
@@ -24,7 +22,7 @@ const TextInput = ({
       'govuk-form-group--error': error,
     })}
   >
-    <label className={`govuk-label lbh-label`} htmlFor={name}>
+    <label className={`govuk-label govuk-label--${labelSize} lbh-label`} htmlFor={name}>
       {label} {required && <span className="govuk-required">*</span>}
     </label>
     {hint && (

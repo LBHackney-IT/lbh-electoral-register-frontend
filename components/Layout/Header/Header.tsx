@@ -5,7 +5,6 @@ const HeaderComponent = ({
 }: {
   serviceName: string;
 }): React.ReactElement => {
-
   return (
     <header className="lbh-header ">
       <div className="lbh-header__main">

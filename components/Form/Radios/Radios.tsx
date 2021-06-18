@@ -1,8 +1,6 @@
 import cx from 'classnames';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
-
-import type { GenericField, Radios as Props } from 'components/Form/types';
+import type { Radios as Props } from 'components/Form/types';
 import { FieldErrorMessage } from '../FieldErrorMessage/FieldErrorMessage';
 
 const defaultOptions = ['Yes', 'No'];
@@ -27,7 +25,7 @@ const Radios = ({
         'govuk-form-group--error': error,
       })}
     >
-      <label className={`lbh-label govuk-label`} htmlFor={name}>
+      <label className={`lbh-label govuk-label govuk-label--${labelSize}`} htmlFor={name}>
         {label} {required && <span className="govuk-required">*</span>}
       </label>
       {hint && (

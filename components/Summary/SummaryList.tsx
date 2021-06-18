@@ -1,5 +1,3 @@
-import styles from './Summary.module.scss';
-
 interface SummaryElement {
   key: string;
   title: string;
@@ -15,7 +13,7 @@ interface Props {
 const SummaryList = ({ list }: Props): React.ReactElement => (
   <dl className="govuk-summary-list">
     {list &&
-      list.map(({ key, title, value, href, type }) => (
+      list.map(({ key, title, value, href }) => (
         <div key={key} className="govuk-summary-list__row">
           <dt className="govuk-summary-list__key">{title}</dt>
           <dd className="govuk-summary-list__value">{value}</dd>
