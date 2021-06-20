@@ -4,7 +4,7 @@ import { InputHTMLAttributes } from 'react';
 import {
   RegisterOptions,
   ValidateResult,
-  UseFormMethods
+  UseFormMethods,
 } from 'react-hook-form';
 import TextInput from './TextInput/TextInput';
 

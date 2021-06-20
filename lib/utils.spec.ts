@@ -1,6 +1,4 @@
-import {
-  truncate
-} from './utils';
+import { truncate } from './utils';
 
 describe('truncate', () => {
   it('leaves short text unaltered', () => {

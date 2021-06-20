@@ -22,7 +22,10 @@ const TextArea = ({
     })}
   >
     {label && (
-      <label className={`lbh-label govuk-label govuk-label--${labelSize}`} htmlFor={name}>
+      <label
+        className={`lbh-label govuk-label govuk-label--${labelSize}`}
+        htmlFor={name}
+      >
         {label} {required && <span className="govuk-required">*</span>}
       </label>
     )}

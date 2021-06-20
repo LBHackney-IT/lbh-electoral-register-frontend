@@ -10,7 +10,7 @@ describe('Header component', () => {
   };
 
   it('should render service name but no header links', () => {
-    const { getByText } = render( <Header {...props} /> );
+    const { getByText } = render(<Header {...props} />);
     expect(getByText('Foo')).toBeInTheDocument();
   });
 });

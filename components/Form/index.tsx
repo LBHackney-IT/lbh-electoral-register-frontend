@@ -6,4 +6,12 @@ import Select from './Select/Select';
 import TextInput from './TextInput/TextInput';
 import TextArea from './TextArea/TextArea';
 
-export { Checkbox, DateInput, FieldErrorMessage, Radios, Select, TextInput, TextArea };
+export {
+  Checkbox,
+  DateInput,
+  FieldErrorMessage,
+  Radios,
+  Select,
+  TextInput,
+  TextArea,
+};

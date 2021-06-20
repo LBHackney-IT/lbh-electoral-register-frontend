@@ -39,7 +39,10 @@ const Select = ({
         }
       )}
     >
-      <label className={`govuk-label govuk-label--${labelSize} lbh-label`} htmlFor={name}>
+      <label
+        className={`govuk-label govuk-label--${labelSize} lbh-label`}
+        htmlFor={name}
+      >
         {label} {required && <span className="govuk-required">*</span>}
       </label>
       <div className={styles.inputContainer}>
