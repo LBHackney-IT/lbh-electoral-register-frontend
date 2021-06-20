@@ -2,7 +2,6 @@ import { useCallback, useRef, forwardRef } from 'react';
 import cx from 'classnames';
 import { Controller, Control } from 'react-hook-form';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import {
   convertFormat,
   isDateValid,
@@ -52,7 +51,7 @@ const DateInput = forwardRef<HTMLInputElement, InputProps>(
         })}
         aria-describedby={`${name}-hint`}
       >
-        <legend className="govuk-label">
+        <legend className={`govuk-label govuk-label--${labelSize}`}>
           {label} {required && <span className="govuk-required">*</span>}
         </legend>
         <span id={`${name}-hint`} className="lbh-hint">
