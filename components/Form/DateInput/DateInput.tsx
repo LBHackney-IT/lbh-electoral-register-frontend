@@ -159,7 +159,7 @@ const ControlledDateInput = ({
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <Controller
-      render={({ field: { onChange, value }}) => (
+      render={({ field: { onChange, value } }) => (
         <DateInput
           name={name}
           value={value}

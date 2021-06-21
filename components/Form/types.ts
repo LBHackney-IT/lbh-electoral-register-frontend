@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { InputHTMLAttributes } from 'react';
-import {
-  RegisterOptions,
-  ValidateResult,
-  useForm,
-} from 'react-hook-form';
+import { RegisterOptions, ValidateResult, useForm } from 'react-hook-form';
 import TextInput from './TextInput/TextInput';
 
 type EnhancedValidate = (
@@ -40,7 +36,7 @@ export interface GenericField {
   name: string;
   label?: string;
   rules?: RegisterOptions;
-  register?: Pick<ReturnType<typeof useForm>, "register">;
+  register?: Pick<ReturnType<typeof useForm>, 'register'>;
   error?: {
     message?: string;
     type?: string;
