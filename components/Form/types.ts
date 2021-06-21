@@ -4,7 +4,7 @@ import { InputHTMLAttributes } from 'react';
 import {
   RegisterOptions,
   ValidateResult,
-  UseFormMethods,
+  useForm,
 } from 'react-hook-form';
 import TextInput from './TextInput/TextInput';
 
@@ -40,7 +40,7 @@ export interface GenericField {
   name: string;
   label?: string;
   rules?: RegisterOptions;
-  register?: UseFormMethods['register'];
+  register?: Pick<ReturnType<typeof useForm>, "register">;
   error?: {
     message?: string;
     type?: string;
