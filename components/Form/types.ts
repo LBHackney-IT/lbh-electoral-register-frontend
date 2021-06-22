@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { InputHTMLAttributes } from 'react';
-import { RegisterOptions, ValidateResult, UseFormMethods } from 'react-hook-form';
+import {
+  RegisterOptions,
+  ValidateResult,
+  UseFormMethods,
+} from 'react-hook-form';
 import TextInput from './TextInput/TextInput';
 
 type EnhancedValidate = (
