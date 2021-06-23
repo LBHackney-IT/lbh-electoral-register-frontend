@@ -21,7 +21,7 @@
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "^7.8.8",
+    "react-hook-form": "^6.15.5",
     "uk-postcode-validator": "^1.1.1"
   },
   "devDependencies": {

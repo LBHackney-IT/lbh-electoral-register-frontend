@@ -159,7 +159,7 @@ const ControlledDateInput = ({
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <Controller
-      render={({ field: { onChange, value } }) => (
+      render={({ onChange, value }) => (
         <DateInput
           name={name}
           value={value}
@@ -170,7 +170,7 @@ const ControlledDateInput = ({
         />
       )}
       name={name}
-      // onFocus={() => inputRef.current?.focus()}
+      onFocus={() => inputRef.current?.focus()}
       rules={{
         ...rules,
         validate: {
