@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DynamicInputMulti should render properly 1`] = `
+<DocumentFragment>
+  <div
+    class="govuk-!-margin-bottom-5 wrapper"
+  >
+    MockedDynamicInput
+  </div>
+  <div
+    class="govuk-!-margin-bottom-5 wrapper"
+  >
+    MockedDynamicInput
+    <button
+      class="delete"
+    >
+      MockedCloseButton
+      <span
+        class="govuk-visually-hidden"
+      >
+        Remove this i am a multi input
+      </span>
+    </button>
+  </div>
+  <div
+    class="govuk-!-margin-bottom-5 wrapper"
+  >
+    MockedDynamicInput
+    <button
+      class="delete"
+    >
+      MockedCloseButton
+      <span
+        class="govuk-visually-hidden"
+      >
+        Remove this i am a multi input
+      </span>
+    </button>
+  </div>
+  <div
+    class="govuk-!-margin-top-3 govuk-!-margin-bottom-5"
+  >
+    <button
+      class="govuk-link"
+    >
+      Add a new one
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DynamicInputMulti should render properly with isMultiInit false 1`] = `
+<DocumentFragment>
+  <div
+    class="govuk-!-margin-top-3 govuk-!-margin-bottom-5"
+  >
+    <button
+      class="govuk-link"
+    >
+      Add a something
+    </button>
+  </div>
+</DocumentFragment>
+`;
