@@ -36,7 +36,7 @@ const FileViewer = ({ file }: Props): JSX.Element => {
       <div className="page-controls lbh-simple-pagination govuk-!-margin-top-3">
         <button className="lbh-simple-pagination__link" onClick={prevPage}>
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
-            <path d="M10 1L2 9.5L10 18" stroke-width="2" />
+            <path d="M10 1L2 9.5L10 18" strokeWidth="2" />
           </svg>
         </button>
         <p className="lbh-simple-pagination__link page-indicator">
@@ -47,7 +47,7 @@ const FileViewer = ({ file }: Props): JSX.Element => {
           onClick={nextPage}
         >
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
-            <path d="M1 18L9 9.5L1 1" stroke-width="2" />
+            <path d="M1 18L9 9.5L1 1" strokeWidth="2" />
           </svg>
         </button>
       </div>

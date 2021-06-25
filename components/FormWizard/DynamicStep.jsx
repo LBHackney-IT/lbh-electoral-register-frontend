@@ -2,6 +2,7 @@ import { isValidElement, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import cx from 'classnames';
+import { useRouter } from 'next/router';
 
 import Button from 'components/Button/Button';
 import DynamicInput from 'components/FormWizard/DynamicInput';
@@ -15,8 +16,8 @@ const DynamicStep = ({
   components,
   formData,
   onStepSubmit,
-  onSaveAndExit,
 }) => {
+  const router = useRouter();
   const { handleSubmit, register, control, errors, setValue, watch } = useForm({
     defaultValues: formData,
   });
@@ -135,7 +136,6 @@ DynamicStep.propTypes = {
   stepId: PropTypes.array,
   components: PropTypes.array,
   onStepSubmit: PropTypes.func.isRequired,
-  onSaveAndExit: PropTypes.func.isRequired,
   formData: PropTypes.object.isRequired,
   isMulti: PropTypes.bool,
 };

@@ -3,10 +3,9 @@ import Header from './Header/Header';
 
 export interface Props {
   children: React.ReactChild;
-  goBackButton?: boolean;
 }
 
-const Layout = ({ goBackButton, children }: Props): React.ReactElement => {
+const Layout = ({ children }: Props): React.ReactElement => {
   return (
     <>
       <Seo title="Register Admin - Hackney Council" />

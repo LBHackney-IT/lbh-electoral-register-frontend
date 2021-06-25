@@ -55,6 +55,7 @@ FileUpload.propTypes = {
     message: PropTypes.string.isRequired,
   }),
   inputClassName: PropTypes.string,
+  onChange: () => {},
   type: PropTypes.object,
   register: PropTypes.func,
   required: PropTypes.bool,
