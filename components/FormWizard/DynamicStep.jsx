@@ -17,6 +17,7 @@ const DynamicStep = ({
   formData,
   onStepSubmit,
 }) => {
+  const router = useRouter();
   const { handleSubmit, register, control, errors, setValue, watch } = useForm({
     defaultValues: formData,
   });
@@ -40,7 +41,6 @@ const DynamicStep = ({
     return null;
   }
 
-  const router = useRouter();
   const onBack = () => {
     router.back();
   };
