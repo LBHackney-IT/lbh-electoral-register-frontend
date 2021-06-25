@@ -1,6 +1,5 @@
 import {
   parseDate,
-  formatDate,
   isDateValid,
   convertFormat,
   stringDateToObject,
@@ -17,13 +16,6 @@ describe('date util', () => {
         new Date(2021, 0, 19)
       );
       expect(parseDate('-12-12')).toEqual(undefined);
-    });
-  });
-
-  describe('formatDate', () => {
-    it('should work properly', () => {
-      expect(formatDate('22/09/1941')).toEqual('22 Sept 1941');
-      expect(formatDate('22/09/1941 13:49:43')).toEqual('22 Sept 1941');
     });
   });
 

@@ -50,7 +50,7 @@ const UploadApplication = () => {
           rules="{ required: true }"
           onChange={handleFileInput}
         />
-        <Button onClick={onFormSubmit} type="submit" label="Submit"></Button>
+        <Button type="submit" label="Submit"></Button>
       </form>
     </div>
   );
