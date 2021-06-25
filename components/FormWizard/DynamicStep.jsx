@@ -42,7 +42,7 @@ const DynamicStep = ({
 
   const router = useRouter();
   const onBack = () => {
-      router.back();
+    router.back();
   };
 
   return (
