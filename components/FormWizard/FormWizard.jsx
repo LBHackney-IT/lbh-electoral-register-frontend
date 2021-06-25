@@ -5,7 +5,6 @@ import { useBeforeunload } from 'react-beforeunload';
 
 import Seo from 'components/Layout/Seo/Seo';
 import DynamicStep from 'components/FormWizard/DynamicStep';
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
 import { createSteps, getNextStepPath, haveStepsChanged } from 'utils/steps';
 import { deepmerge } from 'utils/objects';
 import { getQueryString } from 'utils/urls';
@@ -22,7 +21,6 @@ const FormWizard = ({
   title,
   personDetails,
   includesDetails,
-  hideBackButton,
   customConfirmation,
   customSummary,
   isSummaryCollapsable = true,
