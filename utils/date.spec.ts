@@ -22,8 +22,8 @@ describe('date util', () => {
 
   describe('formatDate', () => {
     it('should work properly', () => {
-      expect(formatDate('22/09/1941')).toEqual('22 Sep 1941');
-      expect(formatDate('22/09/1941 13:49:43')).toEqual('22 Sep 1941');
+      expect(formatDate('22/09/1941')).toEqual('22 Sept 1941');
+      expect(formatDate('22/09/1941 13:49:43')).toEqual('22 Sept 1941');
     });
   });
 
