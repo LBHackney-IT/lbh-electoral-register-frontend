@@ -17,8 +17,7 @@ const UploadApplication = () => {
     }
   };
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
+  const onFormSubmit = () => {
     if (file) {
       router.push('/form/register-applicant/name');
     } else {
