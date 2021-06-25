@@ -60,30 +60,17 @@ const FormWizard = ({
   return (
     <div className="govuk-width-container">
       <Seo title={`${step.title} - ${title}`} />
-      {!hideBackButton && currentStepIndex !== 0 && step.id !== 'confirmation' && (
-        <a className="govuk-back-link" href="#" onClick={() => Router.back()}>
-          Back
-        </a>
-      )}
       <fieldset
         className="govuk-fieldset"
         role="group"
         aria-describedby={showTitle ? 'step-title' : undefined}
       >
         {showTitle && (
-          <>
-            <Breadcrumbs
-              data={formData}
-              path={formPath}
-              steps={formSteps}
-              currentStepIndex={currentStepIndex}
-            />
-            <legend className="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 id="step-title" className="govuk-fieldset__heading">
-                {step.title}
-              </h1>
-            </legend>
-          </>
+          <legend className="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 id="step-title" className="govuk-fieldset__heading">
+              {step.title}
+            </h1>
+          </legend>
         )}
         {stepHeader?.()}
         <StepComponent
