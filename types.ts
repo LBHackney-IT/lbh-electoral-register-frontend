@@ -179,13 +179,6 @@ export interface Resident {
 export interface User {
   name: string;
   email: string;
-  permissionFlag: AgeContext;
-  hasDevPermissions: boolean;
-  hasAdminPermissions: boolean;
-  hasAdultPermissions: boolean;
-  hasChildrenPermissions: boolean;
-  hasAllocationsPermissions?: boolean;
-  hasUnrestrictedPermissions?: boolean;
   isAuthorised: boolean;
 }
 
