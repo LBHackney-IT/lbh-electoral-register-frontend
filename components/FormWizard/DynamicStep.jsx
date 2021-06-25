@@ -43,7 +43,7 @@ const DynamicStep = ({
   const onBack = (event) => {
     event.preventDefault();
     router.back();
-  }; 
+  };
 
   return (
     <>
