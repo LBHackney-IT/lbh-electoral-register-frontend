@@ -17,11 +17,12 @@ const UploadApplication = () => {
     }
   };
 
-  const onFormSubmit = () => {
+  const onFormSubmit = (e) => {
+    e.preventDefault();
     if (file) {
-      router.push('/form/register-applicant/name');
+        router.push('/form/register-applicant/name');
     } else {
-      setErrorMessage(true);
+        setErrorMessage(true);
     }
   };
 

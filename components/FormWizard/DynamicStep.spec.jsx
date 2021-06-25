@@ -18,7 +18,7 @@ describe('DynamicStep component', () => {
       bar_input: 'foo',
     },
     onStepSubmit: jest.fn(),
-    onSaveAndExit: jest.fn(),
+    onBack: jest.fn(),
   };
   it('should render properly', () => {
     const { asFragment } = render(<DynamicStep {...props} />);
@@ -42,14 +42,14 @@ describe('DynamicStep component', () => {
     });
   });
 
-  it('should fire save and exit button', async () => {
+  it('should fire back button', async () => {
     const { getByRole } = render(<DynamicStep {...props} />);
-    const saveButton = getByRole('button', { name: 'Save and finish later' });
+    const backButton = getByRole('button', { name: 'Back' });
 
-    expect(saveButton).toBeInTheDocument();
+    expect(backButton).toBeInTheDocument();
 
-    fireEvent.click(saveButton);
+    fireEvent.click(backButton);
 
-    await waitFor(() => expect(props.onSaveAndExit).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(props.onBack).toHaveBeenCalledTimes(1));
   });
 });

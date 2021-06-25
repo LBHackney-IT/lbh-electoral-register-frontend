@@ -30,26 +30,16 @@ exports[`DynamicStep component should render properly 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="actions"
-    >
+    <div>
       <button
-        class="lbh-button govuk-button lbh-button--secondary lbh-button govuk-button"
+        class="lbh-button govuk-button lbh-button--secondary govuk-!-margin-right-1"
         data-module="govuk-button"
-        style="min-width: 200px;"
         type="button"
       >
-        Save and finish later
+        Back
       </button>
-      <a
-        class="lbh-link govuk-link"
-        href="/"
-        style="margin-left: 1.5rem;"
-      >
-        Cancel
-      </a>
       <button
-        class="lbh-button govuk-button"
+        class="lbh-button govuk-button govuk-!-margin-right-1"
         data-module="govuk-button"
         type="submit"
       >
