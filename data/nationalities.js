@@ -1,3 +1,1 @@
-export default [
-  'British'
-];
+export default ['British'];
