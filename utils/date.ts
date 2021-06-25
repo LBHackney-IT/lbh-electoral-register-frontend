@@ -18,18 +18,6 @@ export const parseDate = (date: string): Date | undefined => {
   }
 };
 
-export const formatDate = (date: string): string | undefined => {
-  const parsedDate = parseDate(date);
-  return (
-    parsedDate &&
-    parsedDate.toLocaleString('en-GB', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    })
-  );
-};
-
 export const isDateValid = (date: string): boolean =>
   Boolean(date) && isValid(parseDate(date));
 

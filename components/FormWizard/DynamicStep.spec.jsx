@@ -2,6 +2,14 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 
 import DynamicStep from './DynamicStep';
 
+const mockedUseRouter = {
+  back: jest.fn(),
+};
+
+jest.mock('next/router', () => ({
+  useRouter: () => mockedUseRouter,
+}));
+
 describe('DynamicStep component', () => {
   const props = {
     stepId: ['Foo'],
@@ -50,6 +58,6 @@ describe('DynamicStep component', () => {
 
     fireEvent.click(backButton);
 
-    await waitFor(() => expect(props.onBack).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(mockedUseRouter.back).toHaveBeenCalledTimes(1));
   });
 });
