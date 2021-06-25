@@ -39,6 +39,12 @@ const DynamicStep = ({
   if (!register) {
     return null;
   }
+
+  const onBack = (event) => {
+    event.preventDefault();
+    router.back();
+  }; 
+
   return (
     <>
       <form
@@ -106,26 +112,19 @@ const DynamicStep = ({
             }
           />
         )}
-        <div className={styles.actions}>
+        <div>
           <Button
-            className="lbh-button govuk-button"
+            className="govuk-!-margin-right-1"
             isSecondary
-            wideButton
-            label="Save and finish later"
+            label="Back"
             type="button"
-            onClick={() => onSaveAndExit(stepValues)}
+            onClick={onBack}
           />
-          <a
-            href="/"
-            className="lbh-link govuk-link"
-            style={{
-              marginLeft: '1.5rem',
-            }}
-          >
-            Cancel
-          </a>
-
-          <Button label="Continue" type="submit" />
+          <Button
+            className="govuk-!-margin-right-1"
+            label="Continue"
+            type="submit"
+          />
         </div>
       </form>
     </>
