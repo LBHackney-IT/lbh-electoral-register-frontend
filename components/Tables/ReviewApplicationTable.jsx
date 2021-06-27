@@ -1,3 +1,5 @@
+import { electorPropTypes } from '../../data/electors';
+
 const ReviewApplicationTable = ({ elector }) => (
   <div>
     <dl className="govuk-summary-list">
@@ -145,5 +147,11 @@ const ReviewApplicationTable = ({ elector }) => (
     </dl>
   </div>
 );
+
+ReviewApplicationTable.propTypes = {
+  elector: {
+    ...electorPropTypes,
+  },
+};
 
 export default ReviewApplicationTable;

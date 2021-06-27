@@ -2,14 +2,7 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import cx from 'classnames';
 
-const LinkButton = ({
-  label,
-  route,
-  internalQuery,
-  className,
-  isSecondary,
-  state,
-}) => {
+const LinkButton = ({ label, route, className, isSecondary, state }) => {
   const handleLink = (url) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
   return (
@@ -40,9 +33,11 @@ const LinkButton = ({
 };
 
 LinkButton.propTypes = {
-  internalQuery: PropTypes.string,
   label: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  isSecondary: PropTypes.bool,
+  state: PropTypes.string,
 };
 
 export default LinkButton;

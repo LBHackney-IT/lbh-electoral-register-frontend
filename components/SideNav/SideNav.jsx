@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 
 const SideNav = ({ active }) => {
   return (
@@ -57,6 +58,10 @@ const SideNav = ({ active }) => {
       </li>
     </ul>
   );
+};
+
+SideNav.propTypes = {
+  active: PropTypes.string,
 };
 
 export default SideNav;

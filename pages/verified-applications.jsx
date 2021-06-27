@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import electors from 'data/electors';
+import { electors } from 'data/electors';
 import SideNav from 'components/SideNav/SideNav';
 import ConfirmationBanner from 'components/ConfirmationBanner/ConfirmationBanner';
 import Button from 'components/Button/Button';
@@ -20,12 +20,11 @@ const ReviewVerifiedApplications = () => {
   };
 
   useEffect(() => {
-    if (numAdded > 1) {
-    } else if (router.query.state === 'success') {
+    if (numAdded <= 1 && router.query.state === 'success') {
       setNumAdded(1);
       window.history.replaceState(null, '', '/verified-applications');
     }
-  });
+  }, [numAdded, router.query.state]);
 
   return (
     <div className="govuk-grid-row">

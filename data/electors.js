@@ -1,4 +1,6 @@
-export default [
+import PropTypes from 'prop-types';
+
+export const electors = [
   {
     address_ln1: '1 Hillman Street',
     address_ln2: 'London, United Kingdom',
@@ -76,3 +78,28 @@ export default [
     verification_date: '2021-06-25',
   },
 ];
+
+electors.PropTypes = {
+  address_ln1: PropTypes.string,
+  address_ln2: PropTypes.string,
+  changed_name: PropTypes.bool,
+  declaration: PropTypes.bool,
+  dob: PropTypes.string,
+  email_address: PropTypes.string,
+  first_name: PropTypes.string,
+  last_name: PropTypes.string,
+  lived_at_another_address: PropTypes.string,
+  moved_house: PropTypes.string,
+  nationality: PropTypes.string,
+  nino: PropTypes.string,
+  open_register: PropTypes.bool,
+  phone_input: PropTypes.string,
+  postcode: PropTypes.string,
+  previous_name: PropTypes.string,
+  previous_name_date: PropTypes.string,
+  reasons: PropTypes.string,
+  signature_date: PropTypes.string,
+  time_created: PropTypes.string,
+  urn: PropTypes.string,
+  voting_proxy_check: PropTypes.bool,
+};

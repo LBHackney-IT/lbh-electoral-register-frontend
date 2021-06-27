@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import electors from 'data/electors';
+import { electors } from 'data/electors';
 import SideNav from 'components/SideNav/SideNav';
 import ReviewApplicationTable from 'components/Tables/ReviewApplicationTable';
 import LinkButton from 'components/LinkButton/LinkButton';
