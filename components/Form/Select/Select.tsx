@@ -8,7 +8,7 @@ import styles from './Select.module.scss';
 
 const Select = ({
   label,
-  labelSize = 'm',
+  labelSize = 's',
   hint,
   name,
   options,

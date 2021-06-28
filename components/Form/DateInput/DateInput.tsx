@@ -26,7 +26,7 @@ const DateInput = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       label,
-      labelSize = 'l',
+      labelSize = 's',
       error,
       hint,
       value,

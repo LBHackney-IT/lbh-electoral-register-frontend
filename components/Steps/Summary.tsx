@@ -46,17 +46,12 @@ const SummaryStep = ({
 
   return (
     <div>
-      <div className="lbh-table-header">
-        <h2 className="govuk-fieldset__legend--l gov-weight-lighter ">
-          {`Review details`}
-        </h2>
-      </div>
       <Summary
         formData={formData}
         formPath={formPath}
         formSteps={formSteps}
         canEdit
-        isSummaryCollapsable={isSummaryCollapsable}
+        isSummaryCollapsable={false}
       />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button

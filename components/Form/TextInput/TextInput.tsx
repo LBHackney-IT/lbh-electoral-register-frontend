@@ -12,7 +12,7 @@ const TextInput = ({
   error,
   type = 'text',
   inputClassName,
-  labelSize = 'm',
+  labelSize = 's',
   required,
   width,
   ...otherProps

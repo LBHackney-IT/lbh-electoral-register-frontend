@@ -7,7 +7,7 @@ const defaultOptions = ['Yes', 'No'];
 
 const Radios = ({
   label,
-  labelSize = 'm',
+  labelSize = 's',
   hint,
   name,
   options = defaultOptions,

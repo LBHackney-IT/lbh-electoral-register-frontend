@@ -23,7 +23,7 @@ const FormWizard = ({
   includesDetails,
   customConfirmation,
   customSummary,
-  isSummaryCollapsable = true,
+  isSummaryCollapsable = false,
 }) => {
   Router.events.on('routeChangeComplete', () => {
     window.scrollTo(0, 0);
