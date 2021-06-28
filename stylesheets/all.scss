@@ -178,3 +178,7 @@ body {
 .active {
   font-weight: 700;
 }
+
+.hover-darker-grey:hover {
+  background-color: lbh-colour(lbh-grey-2);
+}
