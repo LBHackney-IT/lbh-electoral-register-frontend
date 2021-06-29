@@ -28,10 +28,8 @@ describe('PhoneInput', () => {
   });
 
   it('Tests phone number with spaces', () => {
-    let newValue = '';
-    const myAction = jest.fn((e) => (newValue = e.target.value));
     const { getByLabelText, getByText } = render(
-      <PhoneInput name={'my-input'} label={'My Input'} onChange={myAction} />
+      <PhoneInput name={'my-input'} label={'My Input'} />
     );
     fireEvent.change(getByLabelText('My Input'), {
       target: { value: '07 849 436 768' },

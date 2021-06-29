@@ -78,9 +78,7 @@ export const SummarySection = ({
     <div className="govuk-!-margin-bottom-7">
       <div className="lbh-table-header">
         <div className={styles.sectionTitle}>
-          <h3 className="govuk-heading-m govuk-!-margin-bottom-0">
-            {title}
-          </h3>
+          <h3 className="govuk-heading-m govuk-!-margin-bottom-0">{title}</h3>
           {canEdit && (
             <Link
               href={`${formPath}${id}?fromSummary=true`}
