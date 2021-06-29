@@ -22,18 +22,18 @@ const ConfirmationStep = ({
   const { ref } = router.query;
   return (
     <div>
-      <div className="govuk-panel govuk-panel--confirmation lbh-panel govuk-!-margin-bottom-9">
-        <h1 className="govuk-panel__title">
+      <section className="lbh-page-announcement">
+        <h3 className="lbh-page-announcement__title">
           {successMessage || 'Submission complete'}
-        </h1>
+        </h3>
         {ref && (
-          <div className="govuk-panel__body">
+          <div className="lbh-page-announcement__content">
             Your reference code
             <br />
             <strong>{ref}</strong>
           </div>
         )}
-      </div>
+      </section>
       <Summary
         formData={formData}
         formPath={formPath}
