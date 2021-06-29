@@ -35,7 +35,7 @@ const ReviewVerifiedApplications = () => {
         <h2 className="lbh-header__title govuk-!-margin-bottom-5">
           Verified Applications
         </h2>
-        <ConfirmationBanner num={numAdded} />
+        {numAdded > 0 && <ConfirmationBanner num={numAdded} />}
         <div className="text-align-right">
           <Button
             label="Add all to register"
