@@ -1,7 +1,10 @@
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 
-const SideNav = ({ active }) => {
+export interface Props {
+  active: string;
+}
+
+const SideNav = ({ active }: Props) => {
   return (
     <ul className="app-navigation__list app-width-container lbh-list">
       <li className="app-navigation__list-item">
@@ -58,10 +61,6 @@ const SideNav = ({ active }) => {
       </li>
     </ul>
   );
-};
-
-SideNav.propTypes = {
-  active: PropTypes.string,
 };
 
 export default SideNav;

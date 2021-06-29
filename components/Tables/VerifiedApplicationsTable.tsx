@@ -1,9 +1,13 @@
 import Button from 'components/Button/Button';
 import LinkButton from 'components/LinkButton/LinkButton';
-import PropTypes from 'prop-types';
-import { electorPropTypes } from '../../data/electors';
+import { Elector } from 'types';
 
-const VerifiedApplicationsTable = ({ electors, onAdd }) => (
+export interface Props {
+  electors: Elector[];
+  onAdd: () => void;
+}
+
+const VerifiedApplicationsTable = ({ electors, onAdd }: Props) => (
   <div>
     <table className="govuk-table">
       <thead className="govuk-table__head">
@@ -50,14 +54,5 @@ const VerifiedApplicationsTable = ({ electors, onAdd }) => (
     </table>
   </div>
 );
-
-VerifiedApplicationsTable.propTypes = {
-  electors: PropTypes.arrayOf(
-    PropTypes.shape({
-      ...electorPropTypes,
-    })
-  ),
-  onAdd: PropTypes.func,
-};
 
 export default VerifiedApplicationsTable;

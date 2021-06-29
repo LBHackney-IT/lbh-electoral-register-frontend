@@ -1,6 +1,10 @@
-import { electorPropTypes } from '../../data/electors';
+import { Elector } from 'types';
 
-const ReviewApplicationTable = ({ elector }) => (
+export interface Props {
+  elector: Elector;
+}
+
+const ReviewApplicationTable = ({ elector }: Props) => (
   <div>
     <dl className="govuk-summary-list">
       <div className="govuk-summary-list__row">
@@ -147,11 +151,5 @@ const ReviewApplicationTable = ({ elector }) => (
     </dl>
   </div>
 );
-
-ReviewApplicationTable.propTypes = {
-  elector: {
-    ...electorPropTypes,
-  },
-};
 
 export default ReviewApplicationTable;
