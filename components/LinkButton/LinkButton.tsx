@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const LinkButton = ({ label, route, className, isSecondary, state }: Props) => {
-  const handleLink = (url:string) => window.open(url, '_blank');
+  const handleLink = (url: string) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
   return (
     <button
