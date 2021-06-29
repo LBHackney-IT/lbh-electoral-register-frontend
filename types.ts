@@ -271,3 +271,35 @@ export type WarningNote = DisclosedNote | UndisclosedNote;
 export interface WarningNotes {
   notes: Array<WarningNote>;
 }
+
+export interface Elector {
+  address_ln1: string,
+  address_ln2?: string,
+  age_range?: string,
+  changed_name?: boolean,
+  declaration: boolean,
+  dob?: string,
+  email_address?: string,
+  first_name: string,
+  last_name: string,
+  lived_at_another_address: string,
+  moved_house: string,
+  nationality?: string,
+  nino?: string,
+  open_register?: boolean,
+  phone_input?: string,
+  postcode?: string,
+  previous_address_ln1?: string,
+  previous_address_ln2?: string,
+  previous_address_overseas?: string,
+  previous_name?: string,
+  previous_name_date?: string,
+  previous_postcode?: string,
+  reasons?: string,
+  signature_date?: string,
+  time_created: string,
+  urn: string,
+  verification_date?: string,
+  voting_proxy_check?: boolean,
+  voting_proxy_type?: string,
+}
