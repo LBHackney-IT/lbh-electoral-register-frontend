@@ -5,20 +5,24 @@ import { useRouter } from 'next/router';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import SideNav from 'components/SideNav/SideNav';
 
+interface HTMLInputEvent extends Event {
+  target: HTMLInputElement & EventTarget;
+}
+
 const UploadApplication = () => {
   const [file, setFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState(false);
 
   const router = useRouter();
 
-  const handleFileInput = (e) => {
+  const handleFileInput = (e: HTMLInputEvent) => {
     if (e.target.files[0]) {
       setFile(e.target.files[0]);
       setErrorMessage(false);
     }
   };
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = (e: HTMLInputEvent) => {
     e.preventDefault();
     if (file) {
       router.push('/form/register-applicant/name');
