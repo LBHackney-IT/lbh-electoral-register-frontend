@@ -21,10 +21,7 @@ const RegisterApplicant = () => {
     <div id="columns">
       <div className="govuk-grid-row">
         <div className="govuk-grid-column-one-half">
-          <a
-            className="govuk-back-link lbh-back-link govuk-!-margin-bottom-6"
-            href="/"
-          >
+          <a className="govuk-back-link lbh-link--no-visited-state govuk-!-margin-bottom-6" href='/'>
             Back to dashboard
           </a>
           <FormWizard

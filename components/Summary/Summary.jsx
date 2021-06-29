@@ -86,7 +86,7 @@ export const SummarySection = ({
               href={`${formPath}${id}?fromSummary=true`}
               as={`${formPath}${id}?fromSummary=true`}
             >
-              <a className="govuk-link">Change</a>
+              <a className="govuk-link lbh-link--no-visited-state">Change</a>
             </Link>
           )}
         </div>
