@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
+export interface Props {
+  num: number;
+}
 
-const ConfirmationBanner = ({ num }) => {
+const ConfirmationBanner = ({ num }: Props) => {
   const confirmationText =
     num === 1
       ? 'Application successfully added to the electoral register'
@@ -10,10 +12,6 @@ const ConfirmationBanner = ({ num }) => {
       <h3 className="lbh-page-announcement__title">{confirmationText}</h3>
     </section>
   );
-};
-
-ConfirmationBanner.propTypes = {
-  num: PropTypes.number,
 };
 
 export default ConfirmationBanner;
