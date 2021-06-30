@@ -20,11 +20,11 @@ const ReviewVerifiedApplications = () => {
   };
 
   useEffect(() => {
-    if (numAdded <= 1 && router.query.state === 'success') {
+    if (numAdded <= 1 && router.query.status === 'success') {
       setNumAdded(1);
       window.history.replaceState(null, '', '/verified-applications');
     }
-  }, [numAdded, router.query.state]);
+  }, [numAdded, router.query.status]);
 
   return (
     <div className="govuk-grid-row">

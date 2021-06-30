@@ -45,7 +45,7 @@ const VerifiedApplicationsTable = ({ electors, onAdd }: Props) => (
                 route="/review-application"
                 isSecondary
                 className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                state={index}
+                electorId={index}
               ></LinkButton>
             </td>
           </tr>

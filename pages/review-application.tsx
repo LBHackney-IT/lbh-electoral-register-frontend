@@ -5,9 +5,10 @@ import SideNav from 'components/SideNav/SideNav';
 import ReviewApplicationTable from 'components/Tables/ReviewApplicationTable';
 import LinkButton from 'components/LinkButton/LinkButton';
 
-const ReviewSingleApplication = () => {
+const ReviewApplication = () => {
   const router = useRouter();
-  const elector = electors[router.query.state];
+  const electorId = parseInt(router.query.state);
+  const elector = electors[electorId];
 
   return (
     <div className="govuk-grid-row">
@@ -22,11 +23,11 @@ const ReviewSingleApplication = () => {
         <LinkButton
           label="Add to register"
           route="/verified-applications"
-          state="success"
+          status="success"
         ></LinkButton>
       </div>
     </div>
   );
 };
 
-export default ReviewSingleApplication;
+export default ReviewApplication;

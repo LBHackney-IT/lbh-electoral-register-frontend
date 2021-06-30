@@ -4,14 +4,23 @@ import cx from 'classnames';
 export interface Props {
   label: string;
   route: string;
-  className: string;
-  isSecondary: boolean;
-  state: number;
+  className?: string;
+  isSecondary?: boolean;
+  electorId?: number;
+  status?: string;
 }
 
-const LinkButton = ({ label, route, className, isSecondary, state }: Props) => {
+const LinkButton = ({
+  label,
+  route,
+  className,
+  isSecondary,
+  electorId,
+  status,
+}: Props) => {
   const handleLink = (url: string) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
+  const queryValue = electorId ? electorId : status;
   return (
     <button
       role="button"
@@ -29,7 +38,7 @@ const LinkButton = ({ label, route, className, isSecondary, state }: Props) => {
           ? handleLink(route)
           : Router.push({
               pathname: `${route}`,
-              query: { state: state },
+              query: { state: queryValue },
             })
       }
     >
