@@ -1,153 +1,122 @@
 import { Elector } from 'types';
 
-export interface Props {
+export interface ReviewApplicationTableProps {
   elector: Elector;
 }
 
-const ReviewApplicationTable = ({ elector }: Props) => (
+export interface TableRowProps {
+  name: string;
+  content: string[];
+}
+
+const TableRow = ({ name, content }: TableRowProps) => (
+  <div className="govuk-summary-list__row">
+    <dt className="govuk-summary-list__key">{name}</dt>
+    <dd className="govuk-summary-list__value">
+      {content.map((row) => {
+        <p className="govuk-body">{row}</p>;
+      })}
+    </dd>
+  </div>
+);
+
+const ReviewApplicationTable = ({ elector }: ReviewApplicationTableProps) => (
   <div>
     <dl className="govuk-summary-list">
-      <div className="govuk-summary-list__row">
-        <dt className="govuk-summary-list__key">Name</dt>
-        <dd className="govuk-summary-list__value">
-          {elector.first_name} {elector.last_name}
-        </dd>
-      </div>
-      <div className="govuk-summary-list__row">
-        <dt className="govuk-summary-list__key">Address</dt>
-        <dd className="govuk-summary-list__value">
-          <p className="govuk-body">{elector.address_ln1}</p>
-          <p className="govuk-body">
-            {elector.address_ln2} {elector.postcode}
-          </p>
-        </dd>
-      </div>
-      <div className="govuk-summary-list__row">
-        <dt className="govuk-summary-list__key">Lives at another address?</dt>
-        <dd className="govuk-summary-list__value">
-          <p className="govuk-body">
-            {elector.lived_at_another_address === 'Y' ? 'Yes' : 'No'}
-          </p>
-        </dd>
-      </div>
-      <div className="govuk-summary-list__row">
-        <dt className="govuk-summary-list__key">
-          Moved house in the last 12 months?
-        </dt>
-        <dd className="govuk-summary-list__value">
-          <p className="govuk-body">
-            {elector.moved_house === 'Y' ? 'Yes' : 'No'}
-          </p>
-        </dd>
-      </div>
+      <TableRow
+        name="Name"
+        content={[`${elector.first_name} ${elector.last_name}`]}
+      />
+      <TableRow
+        name="Address"
+        content={[
+          `${elector.address_ln1}`,
+          `${elector.address_ln2} ${elector.postcode}`,
+        ]}
+      />
+      <TableRow
+        name="Lives at another address?"
+        content={[`${elector.lived_at_another_address === 'Y' ? 'Yes' : 'No'}`]}
+      />
+      <TableRow
+        name="Moved house in the last 12 months?"
+        content={[`${elector.moved_house === 'Y' ? 'Yes' : 'No'}`]}
+      />
 
       {elector.previous_address_ln1 && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Previous Address</dt>
-          <dd className="govuk-summary-list__value">
-            <div>
-              <p className="govuk-body">{elector.previous_address_ln1}</p>
-              <p className="govuk-body">
-                {elector.previous_address_ln2} {elector.previous_postcode}
-              </p>
-              <p className="govuk-body">
-                Overseas voter?
-                {elector.previous_address_overseas === 'Y' ? ' Yes' : ' No'}
-              </p>
-            </div>
-          </dd>
-        </div>
+        <TableRow
+          name="Previous Address"
+          content={[
+            `${elector.previous_address_ln1}`,
+            `${elector.previous_address_ln2} ${elector.previous_postcode}`,
+            `Overseas voter? ${
+              elector.previous_address_overseas === 'Y' ? ' Yes' : ' No'
+            }`,
+          ]}
+        />
       )}
 
       {(elector.email_address || elector.phone_input) && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Contact details</dt>
-          <dd className="govuk-summary-list__value">
-            <p className="govuk-body">{elector.email_address}</p>
-            <p className="govuk-body">{elector.phone_input}</p>
-          </dd>
-        </div>
+        <TableRow
+          name="Contact details"
+          content={[`${elector.email_address}`, `${elector.phone_input}`]}
+        />
       )}
 
       {elector.nationality && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Nationality</dt>
-          <dd className="govuk-summary-list__value">{elector.nationality}</dd>
-        </div>
+        <TableRow name="Nationality" content={[`${elector.nationality}`]} />
       )}
 
       {elector.dob && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Date of birth</dt>
-          <dd className="govuk-summary-list__value">
-            {elector.dob}
-            {elector.age_range}
-          </dd>
-        </div>
+        <TableRow
+          name="Date of birth"
+          content={[`${elector.dob}`, `${elector.age_range}`]}
+        />
       )}
 
       {elector.nino && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">National insurance number</dt>
-          <dd className="govuk-summary-list__value">{elector.nino}</dd>
-        </div>
+        <TableRow
+          name="National insurance number"
+          content={[`${elector.nino}`]}
+        />
       )}
 
       {elector.reasons && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">
-            Reasons for no nationality, date of birth, or national insurance
-            number
-          </dt>
-          <dd className="govuk-summary-list__value">{elector.reasons}</dd>
-        </div>
+        <TableRow
+          name="Reasons for no nationality, date of birth, or national insurance
+          number"
+          content={[`${elector.reasons}`]}
+        />
       )}
 
       {elector.changed_name && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Previous name</dt>
-          <dd className="govuk-summary-list__value">
-            <div>
-              <p className="govuk-body">{elector.previous_name}</p>
-              <p className="govuk-body">
-                Date changed: {elector.previous_name_date}
-              </p>
-            </div>
-          </dd>
-        </div>
+        <TableRow
+          name="Previous name"
+          content={[
+            `${elector.previous_name}`,
+            `Date changed: ${elector.previous_name_date}`,
+          ]}
+        />
       )}
 
       {elector.voting_proxy_check && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">Voting by post or proxy?</dt>
-          <dd className="govuk-summary-list__value">
-            <p className="govuk-body">{elector.voting_proxy_type}</p>
-          </dd>
-        </div>
+        <TableRow
+          name="Voting by post or proxy?"
+          content={[`${elector.voting_proxy_type}`]}
+        />
       )}
 
       {elector.open_register && (
-        <div className="govuk-summary-list__row">
-          <dt className="govuk-summary-list__key">
-            Do not want to be included in the open register?
-          </dt>
-          <dd className="govuk-summary-list__value">
-            {elector.open_register ? 'True' : 'False'}
-          </dd>
-        </div>
+        <TableRow
+          name="Do not want to be included in the open register?"
+          content={[`${elector.open_register ? 'True' : 'False'}`]}
+        />
       )}
 
-      <div className="govuk-summary-list__row">
-        <dt className="govuk-summary-list__key">
-          Applicant signature provided?
-        </dt>
-        <dd className="govuk-summary-list__value">
-          <p className="govuk-body">Yes</p>
-          {elector.signature_date && (
-            <p className="govuk-body">Date signed: {elector.signature_date}</p>
-          )}
-        </dd>
-      </div>
+      <TableRow
+        name="Applicant signature provided?"
+        content={['Yes', `Date signed: ${elector.signature_date}`]}
+      />
     </dl>
   </div>
 );
