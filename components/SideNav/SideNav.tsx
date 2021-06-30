@@ -5,60 +5,44 @@ export interface Props {
 }
 
 const SideNav = ({ active }: Props) => {
+  const links = [{
+    key: 'dashboard',
+    text: 'Dashboard',
+    link: '/'
+  },
+  {
+    key: 'upload',
+    text: 'Upload',
+    link: '/upload-application'
+  },
+  {
+    key: 'search',
+    text: 'Search',
+    link: '/'
+  },
+  {
+    key: 'export',
+    text: 'Export',
+    link: '/'
+  }]
+
   return (
     <ul className="app-navigation__list app-width-container lbh-list">
-      <li className="app-navigation__list-item">
-        <a
-          className={cx(
-            'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-            {
-              active: active === 'dashboard',
-            }
-          )}
-          href="/"
-        >
-          Dashboard
-        </a>
-      </li>
-      <li className="app-navigation__list-item">
-        <a
-          className={cx(
-            'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-            {
-              active: active === 'upload',
-            }
-          )}
-          href="/upload-application"
-        >
-          Upload
-        </a>
-      </li>
-      <li className="app-navigation__list-item">
-        <a
-          className={cx(
-            'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-            {
-              active: active === 'search',
-            }
-          )}
-          href="/"
-        >
-          Search
-        </a>
-      </li>
-      <li className="app-navigation__list-item">
-        <a
-          className={cx(
-            'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-            {
-              active: active === 'export',
-            }
-          )}
-          href="/"
-        >
-          Export
-        </a>
-      </li>
+      {links.map((item) => {
+        <li key={item.key} className="app-navigation__list-item">
+          <a
+            className={cx(
+              'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
+              {
+                'active': active === {item.key},
+              }
+            )}
+            href={item.link}
+          >
+            {item.text}
+          </a>
+        </li>
+      })}
     </ul>
   );
 };
