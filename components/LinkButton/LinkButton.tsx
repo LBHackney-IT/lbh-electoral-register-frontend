@@ -20,7 +20,11 @@ const LinkButton = ({
 }: Props): React.ReactElement => {
   const handleLink = (url: string) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
-  const queryValue = electorId ? electorId : status;
+  const query =
+    electorId || electorId === 0
+      ? { electorId: electorId }
+      : { status: status };
+
   return (
     <button
       role="button"
@@ -38,7 +42,7 @@ const LinkButton = ({
           ? handleLink(route)
           : Router.push({
               pathname: `${route}`,
-              query: { state: queryValue },
+              query: query,
             })
       }
     >
