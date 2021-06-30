@@ -1,4 +1,6 @@
-export const electors = [
+import { Elector } from 'types';
+
+export const electors: Elector[] = [
   {
     address_ln1: '1 Hillman Street',
     address_ln2: 'London, United Kingdom',
