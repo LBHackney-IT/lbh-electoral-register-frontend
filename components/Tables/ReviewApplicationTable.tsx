@@ -13,9 +13,11 @@ const TableRow = ({ name, content }: TableRowProps): React.ReactElement => (
   <div className="govuk-summary-list__row">
     <dt className="govuk-summary-list__key">{name}</dt>
     <dd className="govuk-summary-list__value">
-      {content.map((row) => {
-        <p className="govuk-body">{row}</p>;
-      })}
+      {content.map((row, index) => (
+        <p key={`${name}-${index}`} className="govuk-body">
+          {row}
+        </p>
+      ))}
     </dd>
   </div>
 );
