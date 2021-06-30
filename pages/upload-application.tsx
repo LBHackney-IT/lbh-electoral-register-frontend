@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import FileUpload from 'components/form/FileUpload/FileUpload';
 import Button from 'components/Button/Button';
 import { useRouter } from 'next/router';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
