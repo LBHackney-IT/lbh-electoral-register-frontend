@@ -22,7 +22,7 @@ const UploadApplication = (): React.ReactElement => {
     }
   };
 
-  const onFormSubmit = (e: HTMLInputEvent) => {
+  const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (file) {
       router.push('/form/register-applicant/name');
@@ -43,7 +43,6 @@ const UploadApplication = (): React.ReactElement => {
             name="upload_files"
             width="30"
             label="Upload a scanned application"
-            rules="{ required: true }"
             onChange={handleFileInput}
           />
           <Button type="submit" label="Submit"></Button>
