@@ -7,7 +7,7 @@ import LinkButton from 'components/LinkButton/LinkButton';
 
 const ReviewApplication = (): React.ReactElement => {
   const router = useRouter();
-  const electorId = parseInt(router.query.state);
+  const electorId = parseInt(router.query.electorId);
   const elector = electors[electorId];
 
   return (
