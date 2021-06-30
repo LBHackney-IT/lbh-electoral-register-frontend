@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import FileUpload from 'components/form/FileUpload/FileUpload';
+import FileUpload from 'components/Form/FileUpload/FileUpload';
 import Button from 'components/Button/Button';
 import { useRouter } from 'next/router';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import SideNav from 'components/SideNav/SideNav';
-
-interface HTMLInputEvent extends Event {
-  target: HTMLInputElement & EventTarget;
-}
 
 const UploadApplication = (): React.ReactElement => {
   const [file, setFile] = useState<File | null>(null);
@@ -15,7 +11,7 @@ const UploadApplication = (): React.ReactElement => {
 
   const router = useRouter();
 
-  const handleFileInput = (e: HTMLInputEvent) => {
+  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
       setErrorMessage(false);
