@@ -7,7 +7,10 @@ export interface Props {
   onAdd: () => void;
 }
 
-const VerifiedApplicationsTable = ({ electors, onAdd }: Props) => (
+const VerifiedApplicationsTable = ({
+  electors,
+  onAdd,
+}: Props): React.ReactElement => (
   <div>
     <table className="govuk-table">
       <thead className="govuk-table__head">

@@ -5,7 +5,7 @@ import SideNav from 'components/SideNav/SideNav';
 import ReviewApplicationTable from 'components/Tables/ReviewApplicationTable';
 import LinkButton from 'components/LinkButton/LinkButton';
 
-const ReviewApplication = () => {
+const ReviewApplication = (): React.ReactElement => {
   const router = useRouter();
   const electorId = parseInt(router.query.state);
   const elector = electors[electorId];

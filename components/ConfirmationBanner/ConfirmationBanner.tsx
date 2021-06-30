@@ -2,7 +2,7 @@ export interface Props {
   num: number;
 }
 
-const ConfirmationBanner = ({ num }: Props) => {
+const ConfirmationBanner = ({ num }: Props): React.ReactElement => {
   const confirmationText =
     num === 1
       ? 'Application successfully added to the electoral register'

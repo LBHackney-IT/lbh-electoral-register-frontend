@@ -9,7 +9,7 @@ interface HTMLInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
 }
 
-const UploadApplication = () => {
+const UploadApplication = (): React.ReactElement => {
   const [file, setFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState(false);
 

@@ -7,7 +7,7 @@ import ConfirmationBanner from 'components/ConfirmationBanner/ConfirmationBanner
 import Button from 'components/Button/Button';
 import VerifiedApplicationsTable from 'components/Tables/VerifiedApplicationsTable';
 
-const ReviewVerifiedApplications = () => {
+const ReviewVerifiedApplications = (): React.ReactElement => {
   const router = useRouter();
   const [numAdded, setNumAdded] = useState(0);
 

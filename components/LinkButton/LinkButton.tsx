@@ -17,7 +17,7 @@ const LinkButton = ({
   isSecondary,
   electorId,
   status,
-}: Props) => {
+}: Props): React.ReactElement => {
   const handleLink = (url: string) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
   const queryValue = electorId ? electorId : status;
