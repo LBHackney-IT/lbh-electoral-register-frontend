@@ -36,7 +36,7 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
 
   return (
     <ul className="app-navigation__list app-width-container lbh-list">
-      {navLinks.map((navLink: NavLink) => {
+      {navLinks.map((navLink: NavLink) => (
         <li key={navLink.key} className="app-navigation__list-item">
           <a
             className={cx(
@@ -49,8 +49,8 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
           >
             {navLink.text}
           </a>
-        </li>;
-      })}
+        </li>
+      ))}
     </ul>
   );
 };
