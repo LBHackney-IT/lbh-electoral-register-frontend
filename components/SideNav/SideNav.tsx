@@ -1,11 +1,17 @@
 import cx from 'classnames';
 
-export interface Props {
+export interface SideNavProps {
   active: string;
 }
 
-const SideNav = ({ active }: Props): JSX.Element => {
-  const links = [
+export interface NavLink {
+  key: string;
+  text: string;
+  link: string;
+}
+
+const SideNav = ({ active }: SideNavProps): JSX.Element => {
+  const navLinks: NavLink[] = [
     {
       key: 'dashboard',
       text: 'Dashboard',
@@ -30,18 +36,18 @@ const SideNav = ({ active }: Props): JSX.Element => {
 
   return (
     <ul className="app-navigation__list app-width-container lbh-list">
-      {links.map((item) => {
-        <li key={item.key} className="app-navigation__list-item">
+      {navLinks.map((navLink: NavLink) => {
+        <li key={navLink.key} className="app-navigation__list-item">
           <a
             className={cx(
               'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
               {
-                active: active === item.key,
+                active: active === navLink.key,
               }
             )}
-            href={item.link}
+            href={navLink.link}
           >
-            {item.text}
+            {navLink.text}
           </a>
         </li>;
       })}
