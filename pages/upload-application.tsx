@@ -10,13 +10,13 @@ interface HTMLInputEvent extends Event {
 }
 
 const UploadApplication = (): React.ReactElement => {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const [errorMessage, setErrorMessage] = useState(false);
 
   const router = useRouter();
 
   const handleFileInput = (e: HTMLInputEvent) => {
-    if (e.target.files[0]) {
+    if (e.target.files && e.target.files[0]) {
       setFile(e.target.files[0]);
       setErrorMessage(false);
     }
