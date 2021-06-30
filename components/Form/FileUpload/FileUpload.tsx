@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-
+import { FileUploadProps } from 'components/Form/types';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 
 const FileUpload = ({
@@ -14,7 +13,7 @@ const FileUpload = ({
   required,
   width,
   onChange,
-}) => (
+}: FileUploadProps): React.ReactElement => (
   <div
     className={cx('govuk-form-group lbh-form-group', {
       'govuk-form-group--error': error,
@@ -46,20 +45,5 @@ const FileUpload = ({
     />
   </div>
 );
-
-FileUpload.propTypes = {
-  label: PropTypes.string,
-  labelSize: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
-  name: PropTypes.string.isRequired,
-  error: PropTypes.shape({
-    message: PropTypes.string.isRequired,
-  }),
-  inputClassName: PropTypes.string,
-  onChange: () => {},
-  type: PropTypes.object,
-  register: PropTypes.func,
-  required: PropTypes.bool,
-  width: PropTypes.string,
-};
 
 export default FileUpload;

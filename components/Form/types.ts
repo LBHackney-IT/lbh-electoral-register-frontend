@@ -202,3 +202,18 @@ export interface FormConfig {
   successMessage?: string;
   steps: Array<FormStep>;
 }
+
+export interface FileUploadProps {
+  label?: string;
+  name: string;
+  register?: () => void;
+  error?: {
+    message: string;
+  };
+  type?: string;
+  inputClassName?: string;
+  labelSize?: string;
+  required?: boolean;
+  width?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+}
