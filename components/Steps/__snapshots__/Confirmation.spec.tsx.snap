@@ -3,16 +3,16 @@
 exports[`Confirmation component should render properly 1`] = `
 <DocumentFragment>
   <div>
-    <div
-      class="govuk-panel govuk-panel--confirmation lbh-panel govuk-!-margin-bottom-9"
+    <section
+      class="lbh-page-announcement"
     >
-      <h1
-        class="govuk-panel__title"
+      <h3
+        class="lbh-page-announcement__title"
       >
         Done!
-      </h1>
+      </h3>
       <div
-        class="govuk-panel__body"
+        class="lbh-page-announcement__content"
       >
         Your reference code
         <br />
@@ -20,7 +20,7 @@ exports[`Confirmation component should render properly 1`] = `
           foo123456bar
         </strong>
       </div>
-    </div>
+    </section>
     <div
       class="govuk-!-margin-bottom-7"
     >
@@ -31,15 +31,12 @@ exports[`Confirmation component should render properly 1`] = `
           class="sectionTitle"
         >
           <h3
-            class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+            class="govuk-heading-m govuk-!-margin-bottom-0"
           >
-            FOO BAR
+            Foo Bar
           </h3>
         </div>
       </div>
-      <hr
-        class="govuk-divider"
-      />
       <dl
         class="govuk-summary-list"
       >

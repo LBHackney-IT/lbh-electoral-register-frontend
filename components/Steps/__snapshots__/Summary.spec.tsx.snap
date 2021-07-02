@@ -4,15 +4,6 @@ exports[`Summary component should render properly 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="lbh-table-header"
-    >
-      <h2
-        class="govuk-fieldset__legend--l gov-weight-lighter "
-      >
-        Review details
-      </h2>
-    </div>
-    <div
       class="govuk-!-margin-bottom-7"
     >
       <div
@@ -22,21 +13,18 @@ exports[`Summary component should render properly 1`] = `
           class="sectionTitle"
         >
           <h3
-            class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+            class="govuk-heading-m govuk-!-margin-bottom-0"
           >
-            FOO BAR
+            Foo Bar
           </h3>
           <a
-            class="govuk-link"
+            class="govuk-link lbh-link--no-visited-state"
             href="/foo/bar-foofoo-bar?fromSummary=true"
           >
-            Edit
+            Change
           </a>
         </div>
       </div>
-      <hr
-        class="govuk-divider"
-      />
       <dl
         class="govuk-summary-list"
       >
@@ -57,12 +45,11 @@ exports[`Summary component should render properly 1`] = `
       </dl>
     </div>
     <div
-      style="display: flex; justify-content: space-between;"
+      style="display: flex;"
     >
       <button
-        class="lbh-button govuk-button lbh-button--secondary govuk-button"
+        class="lbh-button govuk-button lbh-button--secondary govuk-button govuk-!-margin-right-1"
         data-module="govuk-button"
-        style="min-width: 200px;"
       >
         Cancel
       </button>
