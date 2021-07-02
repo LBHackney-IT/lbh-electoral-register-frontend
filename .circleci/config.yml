@@ -1,9 +1,16 @@
 version: 2.1
 
+orbs:
+  aws-cli: circleci/aws-cli@1.0.0
+  aws_assume_role: lbh-hackit/aws_assume_role@0.1.0
+
 executors:
   node-executor:
     docker:
       - image: cimg/node:14.17-browsers
+  docker-python:
+    docker:
+      - image: cimg/python:3.7
 
 references:
   workspace_root: &workspace_root '~'
@@ -30,7 +37,7 @@ jobs:
           root: *workspace_root
           paths: .
 
-  tests:
+  unit-tests:
     executor: node-executor
     steps:
       - *attach_workspace
@@ -44,11 +51,60 @@ jobs:
           name: Run tests
           command: npm test -- -w 2
 
+  build:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run:
+          name: Build app
+          command: npm run build
+      - persist_to_workspace:
+          root: *workspace_root
+          paths:
+            - project/build
+
+  assume-role-staging:
+    executor: docker-python
+    steps:
+      - checkout
+      - aws_assume_role/assume_role:
+          account: $AWS_ACCOUNT_STAGING
+          profile_name: default
+          role: 'LBH_Circle_CI_Deployment_Role'
+      - persist_to_workspace:
+          root: *workspace_root
+          paths:
+            - .aws
+
+  deploy-staging:
+    executor: aws-cli/default
+    steps:
+      - *attach_workspace
+      - run:
+          name: deploy
+          command: npm prune --production && sudo npm i -g serverless && sls deploy --stage staging
+
 workflows:
   version: 2
   continuous-delivery:
     jobs:
       - install-dependencies
-      - tests:
+      - unit-tests:
           requires:
             - install-dependencies
+      - build:
+          requires:
+            - unit-tests
+      - assume-role-staging:
+          context: api-assume-role-staging-context
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
+      - deploy-staging:
+          requires:
+            - assume-role-staging
+          filters:
+            branches:
+              only: main

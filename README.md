@@ -24,3 +24,7 @@ The app is integrated with [Hackney's Google SSO service](https://github.com/LBH
 For the production environments, the environment variables specified in `env.sample` should be set appropriately. 
 For local running, this can be bypassed by setting the environment variable `BYPASS_AUTHENTICATION=true`. This is already done 
 in `env.development.local`, which will be picked up by the dev running command. 
+
+## Deployment
+
+The app requires config values to be set in SSM, which will be read by serverless and set as environment variables for the lambda. The necessary SSM keys can be seen in `serverless.yml`, and a description of the environment variables is in `env.sample`.
