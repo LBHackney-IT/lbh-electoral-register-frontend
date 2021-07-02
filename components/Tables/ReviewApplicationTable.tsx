@@ -74,7 +74,7 @@ const ReviewApplicationTable = ({
       {elector.dob && (
         <TableRow
           name="Date of birth"
-          content={[`${elector.dob}`, `${elector.age_range}`]}
+          content={[`${elector.dob}` || `${elector.age_range}`]}
         />
       )}
 

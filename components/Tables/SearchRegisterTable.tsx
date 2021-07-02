@@ -1,16 +1,13 @@
 import Button from 'components/Button/Button';
 import LinkButton from 'components/LinkButton/LinkButton';
 import { Elector } from 'types';
+import Link from 'next/link';
 
 export interface Props {
   electors: Elector[];
-  onAdd: () => void;
 }
 
-const VerifiedApplicationsTable = ({
-  electors,
-  onAdd,
-}: Props): React.ReactElement => (
+const SearchRegisterTable = ({ electors }: Props): React.ReactElement => (
   <div>
     <table className="govuk-table">
       <thead className="govuk-table__head">
@@ -20,9 +17,6 @@ const VerifiedApplicationsTable = ({
           </th>
           <th scope="col" className="govuk-table__header">
             Address
-          </th>
-          <th scope="col" className="govuk-table__header">
-            Verification date
           </th>
           <th scope="col" className="govuk-table__header"></th>
         </tr>
@@ -36,19 +30,11 @@ const VerifiedApplicationsTable = ({
             <td className="govuk-table__cell">
               {elector.address_ln1}, {elector.postcode}
             </td>
-            <td className="govuk-table__cell">{elector.verification_date}</td>
             <td className="govuk-table__cell text-align-right">
-              <Button
-                onClick={onAdd}
-                label="Add to register"
-                className="btn-smaller govuk-!-margin-top-2"
-              ></Button>
               <LinkButton
-                label="Review"
-                route="/review-application"
-                isSecondary
+                label="View"
+                route={`/view-elector/${elector.urn}`}
                 className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                electorId={elector.urn}
               ></LinkButton>
             </td>
           </tr>
@@ -58,4 +44,4 @@ const VerifiedApplicationsTable = ({
   </div>
 );
 
-export default VerifiedApplicationsTable;
+export default SearchRegisterTable;
