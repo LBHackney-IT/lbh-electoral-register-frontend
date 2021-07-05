@@ -8,11 +8,13 @@ import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 
 const ReviewApplication = (): React.ReactElement => {
   const router = useRouter();
+  const { electorId } = router.query;
+  const elector = electorId
+    ? electors.find((elector) => elector.urn === electorId[0])
+    : null;
 
   const displayTable = () => {
-    if (typeof router.query.electorId === 'string') {
-      const electorId = parseInt(router.query.electorId);
-      const elector = electors[electorId];
+    if (elector) {
       return <ReviewApplicationTable elector={elector} />;
     } else {
       return (
@@ -37,7 +39,7 @@ const ReviewApplication = (): React.ReactElement => {
         <LinkButton
           label="Add to register"
           route="/verified-applications"
-          status="success"
+          query={{status: "success"}}
         ></LinkButton>
       </div>
     </div>

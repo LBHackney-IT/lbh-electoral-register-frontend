@@ -45,10 +45,9 @@ const VerifiedApplicationsTable = ({
               ></Button>
               <LinkButton
                 label="Review"
-                route="/review-application"
+                route={`/review-application/${elector.urn}`}
                 isSecondary
                 className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                query={{ electorId: elector.urn }}
               ></LinkButton>
             </td>
           </tr>
