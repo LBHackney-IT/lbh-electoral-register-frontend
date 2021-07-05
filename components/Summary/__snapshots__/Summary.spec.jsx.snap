@@ -12,15 +12,12 @@ exports[`Summary component isSummaryCollapsable should render properly - with No
         class="sectionTitle"
       >
         <h3
-          class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+          class="govuk-heading-m govuk-!-margin-bottom-0"
         >
-          FIRST STEP
+          First Step
         </h3>
       </div>
     </div>
-    <hr
-      class="govuk-divider"
-    />
     <dl
       class="govuk-summary-list"
     >
@@ -64,9 +61,9 @@ exports[`Summary component isSummaryCollapsable should render properly - with is
         class="sectionTitle"
       >
         <h3
-          class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+          class="govuk-heading-m govuk-!-margin-bottom-0"
         >
-          FIRST STEP
+          First Step
         </h3>
       </div>
       <button
@@ -75,9 +72,6 @@ exports[`Summary component isSummaryCollapsable should render properly - with is
         Collapse view
       </button>
     </div>
-    <hr
-      class="govuk-divider"
-    />
     <dl
       class="govuk-summary-list"
     >
@@ -112,15 +106,12 @@ exports[`Summary component should render properly 1`] = `
         class="sectionTitle"
       >
         <h3
-          class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+          class="govuk-heading-m govuk-!-margin-bottom-0"
         >
-          FIRST STEP
+          First Step
         </h3>
       </div>
     </div>
-    <hr
-      class="govuk-divider"
-    />
     <dl
       class="govuk-summary-list"
     >
@@ -164,15 +155,12 @@ exports[`Summary component should render properly 1`] = `
         class="sectionTitle"
       >
         <h3
-          class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+          class="govuk-heading-m govuk-!-margin-bottom-0"
         >
-          SECOND STEP
+          Second Step
         </h3>
       </div>
     </div>
-    <hr
-      class="govuk-divider"
-    />
     <dl
       class="govuk-summary-list"
     >
@@ -202,15 +190,12 @@ exports[`Summary component should render properly 1`] = `
         class="sectionTitle"
       >
         <h3
-          class="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0"
+          class="govuk-heading-m govuk-!-margin-bottom-0"
         >
-          OBJECT STEP
+          Object Step
         </h3>
       </div>
     </div>
-    <hr
-      class="govuk-divider"
-    />
     <dl
       class="govuk-summary-list"
     >

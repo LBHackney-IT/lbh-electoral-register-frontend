@@ -23,7 +23,7 @@ const FormWizard = ({
   includesDetails,
   customConfirmation,
   customSummary,
-  isSummaryCollapsable = true,
+  isSummaryCollapsable = false,
 }) => {
   Router.events.on('routeChangeComplete', () => {
     window.scrollTo(0, 0);
@@ -65,7 +65,10 @@ const FormWizard = ({
       >
         {showTitle && (
           <legend className="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 id="step-title" className="govuk-fieldset__heading">
+            <h1
+              id="step-title"
+              className="govuk-fieldset__heading govuk-!-margin-0 form-step-heading"
+            >
               {step.title}
             </h1>
           </legend>

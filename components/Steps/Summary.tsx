@@ -46,11 +46,6 @@ const SummaryStep = ({
 
   return (
     <div>
-      <div className="lbh-table-header">
-        <h2 className="govuk-fieldset__legend--l gov-weight-lighter ">
-          {`Review details`}
-        </h2>
-      </div>
       <Summary
         formData={formData}
         formPath={formPath}
@@ -58,10 +53,9 @@ const SummaryStep = ({
         canEdit
         isSummaryCollapsable={isSummaryCollapsable}
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex' }}>
         <Button
-          wideButton
-          className="govuk-button"
+          className="govuk-button govuk-!-margin-right-1"
           label="Cancel"
           isSecondary
           onClick={() => (window.location.href = '/')}

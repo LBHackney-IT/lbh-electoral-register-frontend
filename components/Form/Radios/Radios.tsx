@@ -7,7 +7,7 @@ const defaultOptions = ['Yes', 'No'];
 
 const Radios = ({
   label,
-  labelSize = 'm',
+  labelSize = 's',
   hint,
   name,
   options = defaultOptions,
@@ -26,7 +26,7 @@ const Radios = ({
       })}
     >
       <label
-        className={`lbh-label govuk-label govuk-label--${labelSize}`}
+        className={`lbh-label govuk-label govuk-label--${labelSize} radios-label-extra-margin`}
         htmlFor={name}
       >
         {label} {required && <span className="govuk-required">*</span>}

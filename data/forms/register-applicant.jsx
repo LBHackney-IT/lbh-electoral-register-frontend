@@ -136,7 +136,7 @@ export default {
           id: 'myDate',
           label: 'Date of birth',
           hint: 'For example, 31 03 1980',
-          rules: { required: true, min: '2000-13-13' },
+          rules: { required: false, min: '2000-13-13' },
         },
         {
           conditionalRender: (data) => data.dob === null,

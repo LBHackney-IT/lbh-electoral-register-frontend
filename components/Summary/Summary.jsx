@@ -78,15 +78,13 @@ export const SummarySection = ({
     <div className="govuk-!-margin-bottom-7">
       <div className="lbh-table-header">
         <div className={styles.sectionTitle}>
-          <h3 className="govuk-heading-m govuk-custom-text-color govuk-!-margin-bottom-0">
-            {title.toUpperCase()}
-          </h3>
+          <h3 className="govuk-heading-m govuk-!-margin-bottom-0">{title}</h3>
           {canEdit && (
             <Link
               href={`${formPath}${id}?fromSummary=true`}
               as={`${formPath}${id}?fromSummary=true`}
             >
-              <a className="govuk-link">Edit</a>
+              <a className="govuk-link lbh-link--no-visited-state">Change</a>
             </Link>
           )}
         </div>
@@ -102,7 +100,6 @@ export const SummarySection = ({
           </button>
         )}
       </div>
-      <hr className="govuk-divider" />
       {!isCollapsed && (
         <SummaryList
           list={[
