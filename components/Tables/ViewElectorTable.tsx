@@ -26,7 +26,7 @@ const TableRow = ({
         </p>
       ))}
     </dd>
-    <dd className="govuk-summary-list__value">
+    <dd className="govuk-summary-list__value edit-column">
       {edit && (
         <a
           href={`/edit-elector/${edit.field}/${edit.electorId}`}
@@ -63,10 +63,75 @@ const ViewElectorTable = ({
             `${elector.address_ln2} ${elector.postcode}`,
           ]}
         />
+        <TableRow
+          name="Lives at another address?"
+          content={[`${elector.lived_at_another_address === 'Y' ? 'Yes' : 'No'}`]}
+        />
+        <TableRow
+          name="Moved house in the last 12 months?"
+          content={[`${elector.moved_house === 'Y' ? 'Yes' : 'No'}`]}
+        />
+
+        {elector.previous_address_ln1 && (
+          <TableRow
+            name="Previous Address"
+            content={[
+              `${elector.previous_address_ln1}`,
+              `${elector.previous_address_ln2} ${elector.previous_postcode}`,
+              `Overseas voter? ${
+                elector.previous_address_overseas === 'Y' ? ' Yes' : ' No'
+              }`,
+            ]}
+          />
+        )}
+
+        {(elector.email_address || elector.phone_input) && (
+          <TableRow
+            name="Contact details"
+            content={[`${elector.email_address}`, `${elector.phone_input}`]}
+          />
+        )}
+
+        {elector.nationality && (
+          <TableRow name="Nationality" content={[`${elector.nationality}`]} />
+        )}
+
         {elector.dob && (
           <TableRow
             name="Date of birth"
             content={[`${elector.dob}` || `${elector.age_range}`]}
+          />
+        )}
+
+        {elector.nino && (
+          <TableRow
+            name="National insurance number"
+            content={[`${elector.nino}`]}
+          />
+        )}
+
+        {elector.reasons && (
+          <TableRow
+            name="Reasons for no nationality, date of birth, or national insurance
+            number"
+            content={[`${elector.reasons}`]}
+          />
+        )}
+
+        {elector.changed_name && (
+          <TableRow
+            name="Previous name"
+            content={[
+              `${elector.previous_name}`,
+              `Date changed: ${elector.previous_name_date}`,
+            ]}
+          />
+        )}
+
+        {elector.voting_proxy_check && (
+          <TableRow
+            name="Voting by post or proxy?"
+            content={[`${elector.voting_proxy_type}`]}
           />
         )}
         <TableRow
@@ -82,6 +147,10 @@ const ViewElectorTable = ({
             electorId: elector.urn,
             field: 'open-register',
           }}
+        />
+        <TableRow
+          name="Applicant signature provided?"
+          content={['Yes', `Date signed: ${elector.signature_date}`]}
         />
       </dl>
     </div>
