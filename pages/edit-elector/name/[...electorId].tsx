@@ -10,8 +10,8 @@ const EditName = (): React.ReactElement => {
   const router = useRouter();
   const { electorId } = router.query;
   const elector = electorId
-  ? electors.find((elector) => elector.urn === electorId[0])
-  : null;
+    ? electors.find((elector) => elector.urn === electorId[0])
+    : null;
 
   const onFormSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -33,11 +33,7 @@ const EditName = (): React.ReactElement => {
             Full name
           </h2>
           <form onSubmit={onFormSubmit}>
-            <TextInput
-              label="First name(s)"
-              labelSize="s"
-              name="first_name"
-            />
+            <TextInput label="First name(s)" labelSize="s" name="first_name" />
             <TextInput label="Last name" labelSize="s" name="last_name" />
             <div>
               <LinkButton

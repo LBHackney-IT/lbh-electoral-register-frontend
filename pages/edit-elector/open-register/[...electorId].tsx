@@ -10,8 +10,8 @@ const EditOpenRegisterPreference = (): React.ReactElement => {
   const router = useRouter();
   const { electorId } = router.query;
   const elector = electorId
-  ? electors.find((elector) => elector.urn === electorId[0])
-  : null;
+    ? electors.find((elector) => elector.urn === electorId[0])
+    : null;
 
   const onFormSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
