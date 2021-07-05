@@ -1,5 +1,4 @@
 import { Elector } from 'types';
-import ConfirmationBanner from 'components/ConfirmationBanner/ConfirmationBanner';
 
 export interface EditElectorTableProps {
   elector: Elector;
