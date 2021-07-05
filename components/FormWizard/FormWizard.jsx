@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Router, { useRouter } from 'next/router';
-import { useBeforeunload } from 'react-beforeunload';
 
 import Seo from 'components/Layout/Seo/Seo';
 import DynamicStep from 'components/FormWizard/DynamicStep';
@@ -28,7 +27,6 @@ const FormWizard = ({
   Router.events.on('routeChangeComplete', () => {
     window.scrollTo(0, 0);
   });
-  useBeforeunload(() => "You'll lose your data!");
   const {
     query: { stepId, fromSummary, continueForm, ...otherQS },
   } = useRouter();
