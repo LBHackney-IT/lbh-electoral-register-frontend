@@ -12,14 +12,9 @@ export const SearchRegister = (): React.ReactElement => {
   const filterResults = () => {
     setResults(
       electors.filter((elector) =>
-        (
-          elector.first_name.toLowerCase() +
-          ' ' +
-          elector.last_name.toLowerCase()
-        ).includes(query.toLowerCase())
-      )
-    );
-    console.log(results);
+        (elector.first_name.toLowerCase() + ' ' + elector.last_name.toLowerCase())
+        .includes(query.toLowerCase()))
+    )
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
