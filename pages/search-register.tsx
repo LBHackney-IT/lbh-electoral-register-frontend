@@ -9,17 +9,25 @@ export const SearchRegister = (): React.ReactElement => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Elector[]>([]);
 
-  const filterResults = () => {
-    setResults(
-      electors.filter((elector) =>
-        (elector.first_name.toLowerCase() + ' ' + elector.last_name.toLowerCase())
-        .includes(query.toLowerCase()))
-    )
+  const filterResults = (string: string) => {
+    if (string === '' || string === ' ') {
+      setResults([]);
+    } else {
+      setResults(
+        electors.filter((elector) =>
+          (
+            elector.first_name.toLowerCase() +
+            ' ' +
+            elector.last_name.toLowerCase()
+          ).includes(string.toLowerCase())
+        )
+      );
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
-    filterResults();
+    filterResults(e.target.value);
   };
 
   return (
