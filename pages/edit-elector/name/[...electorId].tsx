@@ -6,7 +6,7 @@ import SideNav from 'components/SideNav/SideNav';
 import TextInput from 'components/Form/TextInput/TextInput';
 import Button from 'components/Button/Button';
 
-const EditElector = (): React.ReactElement => {
+const EditName = (): React.ReactElement => {
   const router = useRouter();
   const { electorId } = router.query;
 
@@ -76,4 +76,4 @@ const EditElector = (): React.ReactElement => {
   );
 };
 
-export default EditElector;
+export default EditName;

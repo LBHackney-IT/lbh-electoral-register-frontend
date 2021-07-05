@@ -31,7 +31,7 @@ const TableRow = ({
       {edit && (
         <LinkButton
           label="Edit"
-          route={`/edit-elector/${edit.electorId}`}
+          route={`/edit-elector/${edit.field}/${edit.electorId}`}
           className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
         ></LinkButton>
       )}

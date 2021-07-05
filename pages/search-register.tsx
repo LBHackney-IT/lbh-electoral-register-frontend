@@ -12,7 +12,11 @@ export const SearchRegister = (): React.ReactElement => {
   const filterResults = () => {
     setResults(
       electors.filter((elector) =>
-        elector.first_name.toLowerCase().includes(query.toLowerCase())
+        (
+          elector.first_name.toLowerCase() +
+          ' ' +
+          elector.last_name.toLowerCase()
+        ).includes(query.toLowerCase())
       )
     );
     console.log(results);
