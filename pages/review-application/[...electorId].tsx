@@ -39,7 +39,7 @@ const ReviewApplication = (): React.ReactElement => {
         <LinkButton
           label="Add to register"
           route="/verified-applications"
-          query={{status: "success"}}
+          query={{ status: 'success' }}
         ></LinkButton>
       </div>
     </div>

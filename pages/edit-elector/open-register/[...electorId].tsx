@@ -9,9 +9,20 @@ import Radios from 'components/Form/Radios/Radios';
 const EditOpenRegisterPreference = (): React.ReactElement => {
   const router = useRouter();
   const { electorId } = router.query;
+  const elector = electorId
+  ? electors.find((elector) => elector.urn === electorId[0])
+  : null;
 
   const onFormSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+  };
+
+  const onCancel = () => {
+    if (elector) {
+      router.push(`/view-elector/${elector.urn}`);
+    } else {
+      router.push('/search-register');
+    }
   };
 
   const displayForm = () => {
@@ -28,6 +39,7 @@ const EditOpenRegisterPreference = (): React.ReactElement => {
                 name="open_register"
                 label="Does the elector want to be included in the open register?"
                 options={['Yes', 'No']}
+                required
               />
               <div>
                 <LinkButton
@@ -59,10 +71,6 @@ const EditOpenRegisterPreference = (): React.ReactElement => {
         );
       }
     }
-  };
-
-  const onCancel = () => {
-    router.back();
   };
 
   return (
