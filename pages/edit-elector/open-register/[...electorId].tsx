@@ -21,7 +21,7 @@ const EditOpenRegisterPreference = (): React.ReactElement => {
         return (
           <div>
             <h2 className="lbh-header__title govuk-!-margin-bottom-7">
-              Full Name
+              Open register preference
             </h2>
             <form onSubmit={onFormSubmit}>
               <Radios

@@ -21,7 +21,7 @@ const EditName = (): React.ReactElement => {
         return (
           <div>
             <h2 className="lbh-header__title govuk-!-margin-bottom-7">
-              Full Name
+              Full name
             </h2>
             <form onSubmit={onFormSubmit}>
               <TextInput
