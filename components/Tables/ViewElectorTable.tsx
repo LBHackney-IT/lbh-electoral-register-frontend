@@ -1,5 +1,5 @@
 import { Elector } from 'types';
-import LinkButton from 'components/LinkButton/LinkButton';
+import ConfirmationBanner from 'components/ConfirmationBanner/ConfirmationBanner';
 
 export interface EditElectorTableProps {
   elector: Elector;
@@ -29,7 +29,12 @@ const TableRow = ({
     </dd>
     <dd className="govuk-summary-list__value">
       {edit && (
-        <a href={`/edit-elector/${edit.field}/${edit.electorId}`} className='govuk-link govuk-link--no-visited-state govuk-link--no-underline'>Edit</a>
+        <a
+          href={`/edit-elector/${edit.field}/${edit.electorId}`}
+          className="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+        >
+          Edit
+        </a>
       )}
     </dd>
   </div>

@@ -35,7 +35,15 @@ const ReviewVerifiedApplications = (): React.ReactElement => {
         <h2 className="lbh-header__title govuk-!-margin-bottom-5">
           Verified Applications
         </h2>
-        {numAdded > 0 && <ConfirmationBanner num={numAdded} />}
+        {numAdded > 0 && (
+          <ConfirmationBanner
+            title={
+              numAdded === 1
+                ? 'Application successfully added to the electoral register'
+                : `${numAdded} applications successfully added to the electoral register`
+            }
+          />
+        )}
         <div className="text-align-right">
           <Button
             label="Add all to register"
