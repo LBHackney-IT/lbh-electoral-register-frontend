@@ -1,9 +1,6 @@
-import { Elector } from 'types';
 import { electors } from 'data/electors';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import ViewElectorTable from 'components/Tables/ViewElectorTable';
-import LinkButton from 'components/LinkButton/LinkButton';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import SideNav from 'components/SideNav/SideNav';
 

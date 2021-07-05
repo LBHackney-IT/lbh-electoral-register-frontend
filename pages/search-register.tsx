@@ -5,7 +5,7 @@ import TextInput from 'components/Form/TextInput/TextInput';
 import { useState } from 'react';
 import { Elector } from 'types';
 
-export const SearchRegister = () => {
+export const SearchRegister = (): React.ReactElement => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Elector[]>([]);
 
@@ -18,7 +18,7 @@ export const SearchRegister = () => {
     console.log(results);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     filterResults();
   };

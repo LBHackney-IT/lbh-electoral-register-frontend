@@ -6,11 +6,10 @@ export interface Props {
   route: string;
   className?: string;
   isSecondary?: boolean;
-  electorId?: string;
-  status?: string;
-  edit?: {
-    electorId: string;
-    field: 'name' | 'open-register';
+  query?: {
+    electorId?: string;
+    edit?: 'name' | 'open-register';
+    status?: string;
   };
 }
 
@@ -19,22 +18,10 @@ const LinkButton = ({
   route,
   className,
   isSecondary,
-  electorId,
-  status,
-  edit,
+  query,
 }: Props): React.ReactElement => {
   const handleLink = (url: string) => window.open(url, '_blank');
   const isExternal = route && route.includes('https://');
-  // const getQuery = () => {
-  //   if (status) {
-  //     return { status: status }
-  //   } else if (edit && (electorId || electorId === 0)) {
-  //     return { electorId: electorId, edit: edit }
-  //   } else if (electorId || electorId === 0) {
-  //     return { electorId: electorId }
-  //   }
-  // };
-  // const query = getQuery();
 
   return (
     <button
@@ -53,7 +40,7 @@ const LinkButton = ({
           ? handleLink(route)
           : Router.push({
               pathname: `${route}`,
-              // query: query,
+              query: query,
             })
       }
     >

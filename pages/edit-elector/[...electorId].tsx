@@ -1,8 +1,5 @@
-import { Elector } from 'types';
 import { electors } from 'data/electors';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
-import EditElectorTable from 'components/Tables/ViewElectorTable';
 import LinkButton from 'components/LinkButton/LinkButton';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import SideNav from 'components/SideNav/SideNav';
@@ -13,6 +10,10 @@ const EditElector = (): React.ReactElement => {
   const router = useRouter();
   const { electorId } = router.query;
 
+  const onFormSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
+
   const displayForm = () => {
     if (electorId) {
       const elector = electors.find((elector) => elector.urn === electorId[0]);
@@ -22,7 +23,7 @@ const EditElector = (): React.ReactElement => {
             <h2 className="lbh-header__title govuk-!-margin-bottom-7">
               Full Name
             </h2>
-            <form>
+            <form onSubmit={onFormSubmit}>
               <TextInput
                 label="First name(s)"
                 labelSize="s"
@@ -32,9 +33,12 @@ const EditElector = (): React.ReactElement => {
               <div>
                 <LinkButton
                   label="Save Changes"
-                  route="/view-elector"
-                  electorId={elector.urn}
-                  status={'success'}
+                  route={`/view-elector/${elector.urn}`}
+                  query={{
+                    electorId: elector.urn,
+                    status: 'success',
+                    edit: 'name',
+                  }}
                   className="govuk-!-margin-right-1"
                 ></LinkButton>
                 <Button

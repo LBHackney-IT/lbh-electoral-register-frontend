@@ -28,7 +28,7 @@ const VerifiedApplicationsTable = ({
         </tr>
       </thead>
       <tbody className="govuk-table__body">
-        {electors.map((elector, index) => (
+        {electors.map((elector) => (
           <tr className="govuk-table__row" key={elector.urn}>
             <td className="govuk-table__cell">
               {elector.first_name} {elector.last_name}
@@ -48,7 +48,7 @@ const VerifiedApplicationsTable = ({
                 route="/review-application"
                 isSecondary
                 className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                electorId={elector.urn}
+                query={{ electorId: elector.urn }}
               ></LinkButton>
             </td>
           </tr>

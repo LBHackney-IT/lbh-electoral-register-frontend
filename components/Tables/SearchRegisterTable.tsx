@@ -1,7 +1,5 @@
-import Button from 'components/Button/Button';
 import LinkButton from 'components/LinkButton/LinkButton';
 import { Elector } from 'types';
-import Link from 'next/link';
 
 export interface Props {
   electors: Elector[];
@@ -22,7 +20,7 @@ const SearchRegisterTable = ({ electors }: Props): React.ReactElement => (
         </tr>
       </thead>
       <tbody className="govuk-table__body">
-        {electors.map((elector, index) => (
+        {electors.map((elector) => (
           <tr className="govuk-table__row" key={elector.urn}>
             <td className="govuk-table__cell">
               {elector.first_name} {elector.last_name}
