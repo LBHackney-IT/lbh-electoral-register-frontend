@@ -29,11 +29,7 @@ const TableRow = ({
     </dd>
     <dd className="govuk-summary-list__value">
       {edit && (
-        <LinkButton
-          label="Edit"
-          route={`/edit-elector/${edit.field}/${edit.electorId}`}
-          className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-        ></LinkButton>
+        <a href={`/edit-elector/${edit.field}/${edit.electorId}`} className='govuk-link govuk-link--no-visited-state govuk-link--no-underline'>Edit</a>
       )}
     </dd>
   </div>
