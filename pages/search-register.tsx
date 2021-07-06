@@ -9,8 +9,8 @@ export const SearchRegister = (): React.ReactElement => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Elector[]>([]);
 
-  const filterResults = (string: string) => {
-    if (string === '' || string === ' ') {
+  const filterResults = (query: string) => {
+    if (!query.trim()) {
       setResults([]);
     } else {
       setResults(
@@ -19,7 +19,7 @@ export const SearchRegister = (): React.ReactElement => {
             elector.first_name.toLowerCase() +
             ' ' +
             elector.last_name.toLowerCase()
-          ).includes(string.toLowerCase())
+          ).includes(query.toLowerCase())
         )
       );
     }
