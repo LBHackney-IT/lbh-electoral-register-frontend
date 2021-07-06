@@ -1,14 +1,10 @@
-import { isValidElement, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import cx from 'classnames';
-import { useRouter } from 'next/router';
 
 import Button from 'components/Button/Button';
-import DynamicInput from 'components/FormWizard/DynamicInput';
-import DynamicInputMulti from 'components/FormWizard/DynamicInputMulti';
+import DynamicInput from './DynamicInput';
 
-import styles from './DynamicStep.module.scss';
+import { useRouter } from "next/router";
 
 const DynamicStep = ({
   isMulti,
@@ -18,101 +14,51 @@ const DynamicStep = ({
   onStepSubmit,
 }) => {
   const router = useRouter();
-  const { handleSubmit, register, control, errors, setValue, watch } = useForm({
+  const { handleSubmit, register, control, errors, watch } = useForm({
     defaultValues: formData,
   });
   const stepValues = watch();
-  const currentData = {
-    ...formData,
-    ...stepValues,
-  };
-  const multiStepPrefix =
-    isMulti && `${stepId[0]}[${parseInt(stepId[1]) - 1 || 0}]`;
-  const sanitiseData = useCallback(
-    (data) => ({
-      ...components
-        .filter(({ isMulti }) => isMulti)
-        .reduce((acc, { name }) => ({ ...acc, [name]: undefined }), {}),
-      ...data,
-    }),
-    [components]
-  );
-  if (!register) {
-    return null;
-  }
 
-  const onBack = () => {
+  const onBack = (event) => {
+    event.preventDefault();
     router.back();
-  };
-
+  }; 
+  
   return (
     <>
-      <form
-        role="form"
-        onSubmit={handleSubmit((data) => onStepSubmit(sanitiseData(data)))}
-      >
+      <form onSubmit={handleSubmit((data) => onStepSubmit(data))}>
         <div className="govuk-form-group">
-          {components?.map(
-            ({
-              conditionalRender,
-              showConditionalGuides,
-              name,
-              isMulti: isComponentMulti,
-              ...componentProps
-            }) => {
-              if (isValidElement(componentProps)) {
-                return componentProps;
-              }
-              if (conditionalRender && !conditionalRender(currentData)) {
-                return null;
-              }
-              const inputName = multiStepPrefix
-                ? `${multiStepPrefix}.${name}`
-                : name;
-              const sharedProps = {
-                key: inputName,
-                name: inputName,
-                register: register,
-                control: control,
-                errors: errors,
-                currentData: currentData,
-                ...componentProps,
-              };
-              return (
-                <div
-                  key={inputName}
-                  className={cx('govuk-form-group', {
-                    [styles.withConditionalGuides]:
-                      conditionalRender && showConditionalGuides,
-                  })}
-                >
-                  {isComponentMulti ? (
-                    <DynamicInputMulti
-                      {...sharedProps}
-                      initialInputData={formData[name]}
-                      onDelete={(updatedValue) =>
-                        setValue(inputName, updatedValue)
-                      }
-                    />
-                  ) : (
-                    <DynamicInput {...sharedProps} />
-                  )}
-                </div>
-              );
-            }
+          {components?.map(({ conditionalRender, ...componentProps }) =>
+            componentProps.name ? (
+              conditionalRender &&
+              !conditionalRender({
+                ...formData,
+                ...stepValues,
+              }) ? null : (
+                <DynamicInput
+                  key={componentProps.name}
+                  id={stepId[0]}
+                  register={register}
+                  control={control}
+                  errors={errors}
+                  multiStepIndex={isMulti && (parseInt(stepId[1]) - 1 || 0)}
+                  {...componentProps}
+                />
+              )
+            ) : (
+              componentProps
+            )
           )}
         </div>
         {isMulti && (
           <Button
             isSecondary
-            label="Add another"
+            label="Add Another"
             type="button"
-            onClick={() =>
-              handleSubmit((data) => onStepSubmit(sanitiseData(data), true))()
-            }
+            onClick={() => handleSubmit((data) => onStepSubmit(data, true))()}
           />
         )}
-        <div>
+        <div className="govuk-form-group">
           <Button
             className="govuk-!-margin-right-1"
             isSecondary
@@ -132,7 +78,6 @@ const DynamicStep = ({
 };
 
 DynamicStep.propTypes = {
-  stepId: PropTypes.array,
   components: PropTypes.array,
   onStepSubmit: PropTypes.func.isRequired,
   formData: PropTypes.object.isRequired,

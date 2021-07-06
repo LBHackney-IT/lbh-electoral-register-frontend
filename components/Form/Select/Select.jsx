@@ -1,0 +1,85 @@
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+
+const Select = ({
+  label,
+  labelSize = 's',
+  hint,
+  name,
+  options,
+  onChange,
+  placeHolder = '',
+  register,
+  required,
+  error,
+  children,
+  isUnselectable = true,
+  ignoreValue,
+  value,
+}) => (
+  <div
+    className={cx('govuk-form-group lbh-form-group', {
+      'govuk-form-group--error': error,
+    })}
+  >
+    <label className={`govuk-label lbh-label govuk-label--${labelSize}`} htmlFor={name}>
+      {label} {required && <span className="govuk-required">*</span>}
+    </label>
+    {hint && (
+      <span id={`${name}-hint`} className="govuk-hint lbh-hint">
+        {hint}
+      </span>
+    )}
+    {children}
+    {error && <ErrorMessage label={error.message} />}
+    <select
+      className="govuk-select lbh-select"
+      id={name}
+      name={name}
+      ref={register}
+      aria-describedby={hint && `${name}-hint`}
+      onChange={(e) => onChange && onChange(e.target.value)}
+      value={ignoreValue ? undefined : value}
+    >
+      {isUnselectable && (
+        <option key="empty" value="">
+          {placeHolder}
+        </option>
+      )}
+      {options.map((option) => {
+        const { value, text } =
+          typeof option === 'string' ? { value: option, text: option } : option;
+        return (
+          <option key={value} value={value}>
+            {text}
+          </option>
+        );
+      })}
+    </select>
+  </div>
+);
+
+Select.propTypes = {
+  label: PropTypes.string,
+  labelSize: PropTypes.oneOf(['s', 'm', 'l', 'xl']),
+  name: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        value: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      }),
+    ])
+  ).isRequired,
+  required: PropTypes.bool,
+  placeHolder: PropTypes.string,
+  selected: PropTypes.string,
+  register: PropTypes.func,
+  children: PropTypes.node,
+  error: PropTypes.shape({ message: PropTypes.string.isRequired }),
+};
+
+export default Select;

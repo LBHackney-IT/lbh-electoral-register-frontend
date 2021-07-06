@@ -1,5 +1,5 @@
 module.exports = {
-  distDir: 'build/_next',
+  distDir: 'build',
   future: {
     webpack5: true,
   },

@@ -15,9 +15,6 @@ Default.args = {
     asd: '',
     qwe: 'yo',
     foobar: 'asd',
-    textarea_verbose:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    textarea_succinct: 'asd\nasd',
   },
   formPath: '/form/foo/',
   formSteps: [
@@ -41,22 +38,14 @@ Default.args = {
         },
       ],
     },
-    {
-      id: 'third-step',
-      title: 'TextArea Step',
-      components: [
-        {
-          component: 'TextArea',
-          label: 'I am a verbose textarea',
-          name: 'textarea_verbose',
-        },
-        {
-          component: 'TextArea',
-          label: 'I am a succinct textarea',
-          name: 'textarea_succinct',
-        },
-      ],
-    },
   ],
   onFormSubmit: () => alert('submit'),
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  ...Default.args,
+  onFormSubmit: {
+    action: 'error',
+  },
 };

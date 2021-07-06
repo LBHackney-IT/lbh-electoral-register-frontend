@@ -1,117 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Summary component isSummaryCollapsable should render properly - with No isSummaryCollapsable 1`] = `
-<DocumentFragment>
-  <div
-    class="govuk-!-margin-bottom-7"
-  >
-    <div
-      class="lbh-table-header"
-    >
-      <div
-        class="sectionTitle"
-      >
-        <h3
-          class="govuk-heading-m govuk-!-margin-bottom-0"
-        >
-          First Step
-        </h3>
-      </div>
-    </div>
-    <dl
-      class="govuk-summary-list"
-    >
-      <div
-        class="govuk-summary-list__row"
-      >
-        <dt
-          class="govuk-summary-list__key"
-        >
-          I am foo component
-        </dt>
-        <dd
-          class="govuk-summary-list__value"
-        >
-          123
-        </dd>
-      </div>
-    </dl>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Summary component isSummaryCollapsable should render properly - with isSummaryCollapsable 1`] = `
-<DocumentFragment>
-  <div
-    class="summaryControls"
-  >
-    <button
-      class="govuk-link govuk-link--underline govuk-!-font-weight-bold"
-    >
-      Collapse all
-    </button>
-  </div>
-  <div
-    class="govuk-!-margin-bottom-7"
-  >
-    <div
-      class="lbh-table-header"
-    >
-      <div
-        class="sectionTitle"
-      >
-        <h3
-          class="govuk-heading-m govuk-!-margin-bottom-0"
-        >
-          First Step
-        </h3>
-      </div>
-      <button
-        class="govuk-link govuk-link--underline"
-      >
-        Collapse view
-      </button>
-    </div>
-    <dl
-      class="govuk-summary-list"
-    >
-      <div
-        class="govuk-summary-list__row"
-      >
-        <dt
-          class="govuk-summary-list__key"
-        >
-          I am foo component
-        </dt>
-        <dd
-          class="govuk-summary-list__value"
-        >
-          123
-        </dd>
-      </div>
-    </dl>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Summary component should render properly 1`] = `
 <DocumentFragment>
   <div
     class="govuk-!-margin-bottom-7"
   >
-    <div
-      class="lbh-table-header"
+    <h3
+      class="govuk-heading-m"
     >
-      <div
-        class="sectionTitle"
-      >
-        <h3
-          class="govuk-heading-m govuk-!-margin-bottom-0"
-        >
-          First Step
-        </h3>
-      </div>
-    </div>
+      First Step
+    </h3>
     <dl
       class="govuk-summary-list"
     >
@@ -148,19 +46,11 @@ exports[`Summary component should render properly 1`] = `
   <div
     class="govuk-!-margin-bottom-7"
   >
-    <div
-      class="lbh-table-header"
+    <h3
+      class="govuk-heading-m"
     >
-      <div
-        class="sectionTitle"
-      >
-        <h3
-          class="govuk-heading-m govuk-!-margin-bottom-0"
-        >
-          Second Step
-        </h3>
-      </div>
-    </div>
+      Second Step
+    </h3>
     <dl
       class="govuk-summary-list"
     >
@@ -176,80 +66,6 @@ exports[`Summary component should render properly 1`] = `
           class="govuk-summary-list__value"
         >
           asd
-        </dd>
-      </div>
-    </dl>
-  </div>
-  <div
-    class="govuk-!-margin-bottom-7"
-  >
-    <div
-      class="lbh-table-header"
-    >
-      <div
-        class="sectionTitle"
-      >
-        <h3
-          class="govuk-heading-m govuk-!-margin-bottom-0"
-        >
-          Object Step
-        </h3>
-      </div>
-    </div>
-    <dl
-      class="govuk-summary-list"
-    >
-      <div
-        class="govuk-summary-list__row"
-      >
-        <dt
-          class="govuk-summary-list__key"
-        >
-          I am object component
-        </dt>
-        <dd
-          class="govuk-summary-list__value"
-        >
-          <div>
-            <span>
-              first
-            </span>
-            <br />
-          </div>
-          <div>
-            <span>
-              second
-            </span>
-            <br />
-          </div>
-          <div>
-            <span>
-              third
-            </span>
-            <br />
-          </div>
-        </dd>
-      </div>
-      <div
-        class="govuk-summary-list__row"
-      >
-        <dt
-          class="govuk-summary-list__key"
-        >
-          I am object component inline
-        </dt>
-        <dd
-          class="govuk-summary-list__value"
-        >
-          <span>
-            first 
-          </span>
-          <span>
-            second 
-          </span>
-          <span>
-            third 
-          </span>
         </dd>
       </div>
     </dl>

@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import cx from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import SummaryList from 'components/Summary/SummaryList';
 import { filterStepsOnCondition, filterDataOnCondition } from 'utils/steps';
-import { formatData, getSectionObject } from 'utils/summary';
-import { setValues } from 'utils/objects';
+import { convertFormat } from 'utils/date';
+import { typeOf } from 'react-is';
 
-import styles from './Summary.module.scss';
+const MultiValue = ([key, value]) => (
+  <div key={key}>
+    <span>{value}</span>
+    <br />
+  </div>
+);
 
 const SummaryMultiSection = ({
   formData,
@@ -43,23 +46,6 @@ const SummaryMultiSection = ({
   </>
 );
 
-SummaryMultiSection.propTypes = {
-  formData: PropTypes.shape({}).isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  formPath: PropTypes.string.isRequired,
-  canEdit: PropTypes.bool,
-  additionalMetadata: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-      type: PropTypes.string,
-      href: PropTypes.string,
-    })
-  ),
-};
-
 export const SummarySection = ({
   formData,
   id,
@@ -67,150 +53,116 @@ export const SummarySection = ({
   components,
   formPath,
   canEdit,
-  collapsedSection,
-  toggleCollapsed,
-  isSummaryCollapsable,
-  additionalMetadata,
 }) => {
-  const isCollapsed = collapsedSection[id];
-
+  const Summary = (
+    <SummaryList
+      list={components
+        .filter(({ name }) => formData[name])
+        .map(({ component, options, name, label }) => {
+          if (component === 'AddressLookup') {
+            const { address, postcode } = formData[name];
+            return (
+              address && {
+                key: name,
+                title: label,
+                value: (
+                  <>
+                    {address.split(', ').map((value) => (
+                      <div key={value}>
+                        <span>{value}</span>
+                        <br />
+                      </div>
+                    ))}
+                    <div>{postcode}</div>
+                  </>
+                ),
+              }
+            );
+          }
+          if(component === 'FileUpload'){
+            var files = '';
+            Array.from(formData[name]).forEach(file => { 
+              files+=`${file.name}, `;
+            });
+            return {
+              key: name,
+              title: label,
+              value: files,
+            };
+          }
+          if (component === 'Radios' || component === 'Select') {
+            return {
+              key: name,
+              title: label,
+              value:
+                typeof options[0] === 'string'
+                  ? formData[name]
+                  : options.find((option) => option.value === formData[name])
+                      ?.text,
+            };
+          }
+          if (component === 'DateInput') {
+            return {
+              key: name,
+              title: label,
+              value: convertFormat(formData[name]),
+            };
+          }
+          return {
+            key: name,
+            title: label,
+            value: Array.isArray(formData[name])
+              ? formData[name]
+                  .filter(Boolean)
+                  .map((v) => MultiValue(v.split('/').pop()))
+              : typeof formData[name] === 'object'
+              ? Object.entries(formData[name])
+                  .filter(([, value]) => Boolean(value))
+                  .map(MultiValue)
+              : typeof formData[name] === 'boolean'
+              ? JSON.stringify(formData[name])
+              : formData[name],
+          };
+        })}
+    />
+  );
   return (
     <div className="govuk-!-margin-bottom-7">
-      <div className="lbh-table-header">
-        <div className={styles.sectionTitle}>
-          <h3 className="govuk-heading-m govuk-!-margin-bottom-0">{title}</h3>
-          {canEdit && (
-            <Link
-              href={`${formPath}${id}?fromSummary=true`}
-              as={`${formPath}${id}?fromSummary=true`}
-            >
-              <a className="govuk-link lbh-link--no-visited-state">Change</a>
-            </Link>
-          )}
-        </div>
-        {isSummaryCollapsable && (
-          <button
-            className="govuk-link govuk-link--underline"
-            onClick={(e) => {
-              e.preventDefault();
-              toggleCollapsed(id);
-            }}
-          >
-            {isCollapsed ? 'Expand view' : 'Collapse view'}
-          </button>
-        )}
-      </div>
-      {!isCollapsed && (
-        <SummaryList
-          list={[
-            ...components
-              .filter(({ name }) => formData[name])
-              .map((data) => formatData(data, formData)),
-            ...(additionalMetadata || []),
-          ]}
-        />
+      <h3 className="govuk-heading-m">{title}</h3>
+      {Summary}
+      {canEdit && (
+        <Link
+          href={`${formPath}${id}?fromSummary=true`}
+          as={`${formPath}${id}?fromSummary=true`}
+        >
+          <a className="govuk-link">Change</a>
+        </Link>
       )}
     </div>
   );
 };
 
-SummarySection.propTypes = {
-  formData: PropTypes.shape({}).isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  components: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-    }).isRequired
-  ).isRequired,
-  formPath: PropTypes.string.isRequired,
-  canEdit: PropTypes.bool,
-  collapsedSection: PropTypes.object.isRequired,
-  toggleCollapsed: PropTypes.func.isRequired,
-  isSummaryCollapsable: PropTypes.bool,
-  additionalMetadata: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-      type: PropTypes.string,
-      href: PropTypes.string,
-    })
-  ),
-};
-
-const Summary = ({
-  formData,
-  formSteps,
-  formPath,
-  canEdit,
-  isSummaryCollapsable,
-  additionalMetadata,
-}) => {
-  const [collapsedSection, setCollapsedSection] = useState(
-    getSectionObject(formSteps, formData, false)
-  );
-  const hasCollapsed = Object.values(collapsedSection).find(Boolean);
-  return (
-    <>
-      {isSummaryCollapsable && (
-        <div className={styles.summaryControls}>
-          <button
-            className={cx(
-              'govuk-link',
-              'govuk-link--underline',
-              'govuk-!-font-weight-bold'
-            )}
-            onClick={(e) => {
-              e.preventDefault();
-              setCollapsedSection(setValues(collapsedSection, !hasCollapsed));
-            }}
-          >
-            {hasCollapsed ? 'Expand all' : 'Collapse all'}
-          </button>
-        </div>
-      )}
-      {filterStepsOnCondition(formSteps, formData).map((section) => {
-        const props = {
-          key: section.id,
-          formData: filterDataOnCondition(formSteps, formData),
-          formPath: formPath,
-          canEdit: canEdit,
-          collapsedSection,
-          toggleCollapsed: (id) =>
-            setCollapsedSection({
-              ...collapsedSection,
-              [id]: !collapsedSection[id],
-            }),
-          isSummaryCollapsable,
-          ...section,
-          additionalMetadata,
-        };
-        return section.isMulti ? (
-          <SummaryMultiSection {...props} />
-        ) : (
-          <SummarySection {...props} />
-        );
-      })}
-    </>
-  );
-};
+const Summary = ({ formData, formSteps, formPath, canEdit }) =>
+  filterStepsOnCondition(formSteps, formData).map((section) => {
+    const props = {
+      key: section.id,
+      formData: filterDataOnCondition(formSteps, formData),
+      formPath: formPath,
+      canEdit: canEdit,
+      ...section,
+    };
+    return section.isMulti ? (
+      <SummaryMultiSection {...props} />
+    ) : (
+      <SummarySection {...props} />
+    );
+  });
 
 Summary.propTypes = {
   formData: PropTypes.shape({}).isRequired,
-  formSteps: PropTypes.array.isRequired,
+  formSteps: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   formPath: PropTypes.string.isRequired,
   canEdit: PropTypes.bool,
-  isSummaryCollapsable: PropTypes.bool,
-  additionalMetadata: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-      type: PropTypes.string,
-      href: PropTypes.string,
-    })
-  ),
 };
 
 export default Summary;
