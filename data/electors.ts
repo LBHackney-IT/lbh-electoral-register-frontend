@@ -78,3 +78,42 @@ export const electors: Elector[] = [
     verification_date: '2021-06-25',
   },
 ];
+
+export const headers = [
+  { label: 'Address line 1', key: 'address_ln1' },
+  { label: 'Address line 2', key: 'address_ln2' },
+  { label: 'Changed name?', key: 'changed_name' },
+  { label: 'Age range', key: 'age_range' },
+  { label: 'Singature?', key: 'declaration' },
+  { label: 'Date of birth', key: 'dob' },
+  { label: 'Email address', key: 'email_address' },
+  { label: 'First name', key: 'first_name' },
+  { label: 'Last name', key: 'last_name' },
+  { label: 'Lived at another address?', key: 'lived_at_another_address' },
+  { label: 'Moved house in the last 12 months?', key: 'moved_house' },
+  { label: 'Nationality', key: 'nationality' },
+  { label: 'National insurance number', key: 'nino' },
+  {
+    label: 'Do not want to be included in the open register?',
+    key: 'open_register',
+  },
+  { label: 'Phone number', key: 'phone_input' },
+  { label: 'Postcode', key: 'postcode' },
+  { label: 'Previous address line 1', key: 'previous_address_ln1' },
+  { label: 'Previous address line 2', key: 'previous_address_ln2' },
+  { label: 'Previous address overseas?', key: 'previous_address_overseas' },
+  { label: 'Previous name', key: 'previous_name' },
+  { label: 'Date of name change', key: 'previous_name_date' },
+  { label: 'Previous postcode', key: 'previous_postcode' },
+  {
+    label:
+      'Reasons for no nationality, date of birth, or national insurance number',
+    key: 'reasons',
+  },
+  { label: 'Date of signature', key: 'signature_date' },
+  { label: 'Time created', key: 'time_created' },
+  { label: 'Unique ID', key: 'urn' },
+  { label: 'Verification date', key: 'verification_date' },
+  { label: 'Voting by post or proxy?', key: 'voting_proxy_check' },
+  { label: 'Voting proxy type', key: 'voting_proxy_type' },
+];
