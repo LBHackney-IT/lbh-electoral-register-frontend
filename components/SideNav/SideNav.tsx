@@ -30,7 +30,7 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
     {
       key: 'export',
       text: 'Export',
-      link: '/',
+      link: '/export-register',
     },
   ];
 
