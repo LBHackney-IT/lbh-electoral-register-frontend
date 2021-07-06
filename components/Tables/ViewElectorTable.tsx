@@ -65,9 +65,7 @@ const ViewElectorTable = ({
         />
         <TableRow
           name="Lives at another address?"
-          content={[
-            elector.lived_at_another_address === 'Y' ? 'Yes' : 'No',
-          ]}
+          content={[elector.lived_at_another_address === 'Y' ? 'Yes' : 'No']}
         />
         <TableRow
           name="Moved house in the last 12 months?"
@@ -106,10 +104,7 @@ const ViewElectorTable = ({
         )}
 
         {elector.nino && (
-          <TableRow
-            name="National insurance number"
-            content={[elector.nino]}
-          />
+          <TableRow name="National insurance number" content={[elector.nino]} />
         )}
 
         {elector.reasons && (
@@ -140,9 +135,8 @@ const ViewElectorTable = ({
           name="Open register preference"
           content={[
             elector.open_register
-                ? 'Not included in the open register'
-                : 'Included in the open'
-            ,
+              ? 'Not included in the open register'
+              : 'Included in the open',
           ]}
           edit={{
             electorId: elector.urn,

@@ -29,15 +29,8 @@ const ViewElector = (): React.ReactElement => {
     if (elector) {
       const fieldChanged =
         router.query.edit === 'name' ? 'Name' : 'Open register preference';
-      const message =
-        router.query.edit === 'name'
-          ? `Changed from ${elector.first_name} ${elector.last_name} to {new name}`
-          : 'Elector is no longer included in the open register';
       return (
-        <ConfirmationBanner
-          title={`${fieldChanged} updated successfully`}
-          content={message}
-        />
+        <ConfirmationBanner title={`${fieldChanged} updated successfully`} />
       );
     } else {
       return null;
