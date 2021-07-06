@@ -12,7 +12,9 @@ const ExportRegister = (): React.ReactElement => {
     filename: 'HackneyFullRegister.csv',
   };
 
-  const openRegister = electors.filter((elector) => elector.open_register === true);
+  const openRegister = electors.filter(
+    (elector) => elector.open_register === true
+  );
 
   const csvOpenRegister = {
     data: openRegister,
