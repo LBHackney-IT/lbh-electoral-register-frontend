@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { electors } from 'data/electors';
+import { electors, testElector } from 'data/electors';
 import SideNav from 'components/SideNav/SideNav';
 import ConfirmationBanner from 'components/ConfirmationBanner/ConfirmationBanner';
 import Button from 'components/Button/Button';
@@ -51,7 +51,7 @@ const ReviewVerifiedApplications = (): React.ReactElement => {
             className="govuk-!-margin-top-0"
           />
         </div>
-        <VerifiedApplicationsTable electors={electors} onAdd={onAdd} />
+        <VerifiedApplicationsTable electors={[testElector]} onAdd={onAdd} />
       </div>
     </div>
   );
