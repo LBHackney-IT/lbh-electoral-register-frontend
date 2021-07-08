@@ -183,3 +183,7 @@ body {
 .hover-darker-grey:hover {
   background-color: lbh-colour(lbh-grey-2);
 }
+
+.govuk-summary-list__value:last-child.edit-column {
+  width: 10%;
+}

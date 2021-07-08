@@ -25,7 +25,7 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
     {
       key: 'search',
       text: 'Search',
-      link: '/',
+      link: '/search-register',
     },
     {
       key: 'export',

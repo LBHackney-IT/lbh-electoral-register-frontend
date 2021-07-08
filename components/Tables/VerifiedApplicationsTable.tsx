@@ -28,7 +28,7 @@ const VerifiedApplicationsTable = ({
         </tr>
       </thead>
       <tbody className="govuk-table__body">
-        {electors.map((elector, index) => (
+        {electors.map((elector) => (
           <tr className="govuk-table__row" key={elector.urn}>
             <td className="govuk-table__cell">
               {elector.first_name} {elector.last_name}
@@ -45,10 +45,9 @@ const VerifiedApplicationsTable = ({
               ></Button>
               <LinkButton
                 label="Review"
-                route="/review-application"
+                route={`/review-application/${elector.urn}`}
                 isSecondary
                 className="btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
-                electorId={index}
               ></LinkButton>
             </td>
           </tr>
