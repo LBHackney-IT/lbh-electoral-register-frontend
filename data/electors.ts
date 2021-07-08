@@ -145,7 +145,7 @@ export const testElector: Elector = {
   reasons: 'Test reasons',
   signature_date: 'Test signature_date',
   time_created: 'Test time_created',
-  urn: 'Test urn',
+  urn: 'Test-urn',
   verification_date: 'Test verification_date',
   voting_proxy_check: true,
   voting_proxy_type: 'Test voting_proxy_type',
