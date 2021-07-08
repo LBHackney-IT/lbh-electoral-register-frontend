@@ -79,6 +79,7 @@ export const electors: Elector[] = [
   },
 ];
 
+<<<<<<< HEAD
 export const headers = [
   { label: 'Address line 1', key: 'address_ln1' },
   { label: 'Address line 2', key: 'address_ln2' },
@@ -117,3 +118,36 @@ export const headers = [
   { label: 'Voting by post or proxy?', key: 'voting_proxy_check' },
   { label: 'Voting proxy type', key: 'voting_proxy_type' },
 ];
+=======
+export const testElector: Elector = {
+  address_ln1: 'Test address_ln1',
+  address_ln2: 'Test address_ln2',
+  age_range: 'Test age_range',
+  changed_name: true,
+  declaration: true,
+  dob: 'Test dob',
+  email_address: 'Test email_address',
+  first_name: 'Test first_name',
+  last_name: 'Test last_name',
+  lived_at_another_address: 'Test lived_at_another_address',
+  moved_house: 'Test moved_house',
+  nationality: 'Test nationality',
+  nino: 'Test nino',
+  open_register: true,
+  phone_input: 'Test phone_input',
+  postcode: 'Test postcode',
+  previous_address_ln1: 'Test previous_address_ln1',
+  previous_address_ln2: 'Test previous_address_ln2',
+  previous_address_overseas: 'Test previous_address_overseas',
+  previous_name: 'Test previous_name',
+  previous_name_date: 'Test previous_name_date',
+  previous_postcode: 'Test previous_postcode',
+  reasons: 'Test reasons',
+  signature_date: 'Test signature_date',
+  time_created: 'Test time_created',
+  urn: 'Test urn',
+  verification_date: 'Test verification_date',
+  voting_proxy_check: true,
+  voting_proxy_type: 'Test voting_proxy_type',
+};
+>>>>>>> 512281c (created test elector for testing purposes)
