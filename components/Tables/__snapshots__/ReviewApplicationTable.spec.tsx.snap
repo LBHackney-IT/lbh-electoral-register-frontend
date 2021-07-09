@@ -1,99 +1,301 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReviewApplicationTable should render elector data properly`] = `
+exports[`ReviewApplicationTable should render elector data properly 1`] = `
 <DocumentFragment>
   <div>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Name</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test first_name Test last_name</p>
+    <dl
+      class="govuk-summary-list"
+    >
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Name
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test first_name Test last_name
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Address</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test address_ln1</p>
-          <p class="govuk-body">Test address_ln2</p>
-          <p class="govuk-body">Test postcode</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Address
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test address_ln1
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Test address_ln2
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Test postcode
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Lives at another address?</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">No</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Lives at another address?
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            No
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Moved house in the last 12 months?</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">No</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Moved house in the last 12 months?
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            No
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Previous Address</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test previous_address_ln1</p>
-          <p class="govuk-body">Test previous_address_ln2</p>
-          <p class="govuk-body">Test previous_postcode</p>
-          <p class="govuk-body">Overseas voter?  No</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Previous Address
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test previous_address_ln1
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Test previous_address_ln2
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Test previous_postcode
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Overseas voter?  No
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Contact details</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test email_address</p>
-          <p class="govuk-body">Test phone_input</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Contact details
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test email_address
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Test phone_input
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Nationality</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test nationality</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Nationality
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test nationality
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Date of birth</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test dob</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Date of birth
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test dob
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">National insurance number</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test nino</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          National insurance number
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test nino
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Reasons for no nationality, date of birth, or national insurance number</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test reasons</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Reasons for no nationality, date of birth, or national insurance number
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test reasons
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Previous name</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Test previous_name</p>
-          <p class="govuk-body">Date changed: Test previous_name_date</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Previous name
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Test previous_name
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Date changed: Test previous_name_date
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Voting by post or proxy?</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Proxy</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Voting by post or proxy?
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Proxy
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Do not want to be included in the open register?</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">True</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Do not want to be included in the open register?
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            True
+          </p>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Applicant signature provided?</dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Yes</p>
-          <p class="govuk-body">Date signed: Test signature_date</p>
+      <div
+        class="govuk-summary-list__row"
+      >
+        <dt
+          class="govuk-summary-list__key"
+        >
+          Applicant signature provided?
+        </dt>
+        <dd
+          class="govuk-summary-list__value"
+        >
+          <p
+            class="govuk-body"
+          >
+            Yes
+          </p>
+          <p
+            class="govuk-body"
+          >
+            Date signed: Test signature_date
+          </p>
         </dd>
       </div>
     </dl>
