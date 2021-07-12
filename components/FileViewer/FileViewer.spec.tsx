@@ -10,7 +10,7 @@ describe('FileViewer', () => {
   it('displays file', () => {
     render(<FileViewer file={file}></FileViewer>);
     expect(
-      screen.getByText('Failed to load PDF file.')
+      screen.queryByText('Failed to load PDF file.')
     ).not.toBeInTheDocument();
   });
 

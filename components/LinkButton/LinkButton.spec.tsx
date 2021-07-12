@@ -6,7 +6,7 @@ jest.mock('next/router', () => ({ push: jest.fn() }));
 
 import LinkButton from './LinkButton';
 
-describe('Button', () => {
+describe('Link Button', () => {
   it('renders a button', () => {
     const { getByText } = render(<LinkButton label="Foo" route="foo/bar" />);
     const button = getByText('Foo');
@@ -17,7 +17,10 @@ describe('Button', () => {
     const { getByText } = render(<LinkButton label="Foo" route="foo/bar" />);
     fireEvent.click(getByText('Foo'));
     expect(Router.push).toHaveBeenCalled();
-    expect(Router.push).toHaveBeenCalledWith('foo/bar');
+    expect(Router.push).toHaveBeenCalledWith({
+      "pathname": "foo/bar", 
+      "query": undefined
+    });
   });
 
   it('should pass the correct query', () => {
@@ -34,8 +37,13 @@ describe('Button', () => {
     );
     fireEvent.click(getByText('Foo'));
     expect(Router.push).toHaveBeenCalled();
-    expect(Router.push).toHaveBeenCalledWith(
-      'foo/bar?electorId=abcdefg&edit=name&status=success'
+    expect(Router.push).toHaveBeenCalledWith({
+      "pathname": "foo/bar", 
+      "query": {
+        "edit": "name", 
+        "electorId": "abcdefg", 
+        "status": "success"
+      }}
     );
   });
 });
