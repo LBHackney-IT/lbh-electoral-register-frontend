@@ -18,8 +18,8 @@ describe('Link Button', () => {
     fireEvent.click(getByText('Foo'));
     expect(Router.push).toHaveBeenCalled();
     expect(Router.push).toHaveBeenCalledWith({
-      "pathname": "foo/bar", 
-      "query": undefined
+      pathname: 'foo/bar',
+      query: undefined,
     });
   });
 
@@ -38,12 +38,12 @@ describe('Link Button', () => {
     fireEvent.click(getByText('Foo'));
     expect(Router.push).toHaveBeenCalled();
     expect(Router.push).toHaveBeenCalledWith({
-      "pathname": "foo/bar", 
-      "query": {
-        "edit": "name", 
-        "electorId": "abcdefg", 
-        "status": "success"
-      }}
-    );
+      pathname: 'foo/bar',
+      query: {
+        edit: 'name',
+        electorId: 'abcdefg',
+        status: 'success',
+      },
+    });
   });
 });
