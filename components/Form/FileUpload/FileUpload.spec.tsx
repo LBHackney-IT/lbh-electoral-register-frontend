@@ -15,8 +15,8 @@ describe('FileUpload component', () => {
   });
 
   it('should perform an action on change', () => {
-    const { getByText } = render(<FileUpload {...props} />);
-    fireEvent.click(getByText('foo_file_upload'));
+    const { getByTestId } = render(<FileUpload {...props} />);
+    fireEvent.change(getByTestId('foo_file_upload'));
     expect(myAction).toHaveBeenCalled();
   });
 });
