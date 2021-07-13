@@ -4,9 +4,7 @@ const Footer = (): React.ReactElement => (
   <footer className={`${s.footer}`} role="contentinfo">
     <div className="govuk-width-container">
       <nav className={s.links}>
-        <a href="https://hackney.gov.uk/">
-          Home
-        </a>
+        <a href="https://hackney.gov.uk/">Home</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScILbPD1ioKHzp1D3HN4_DKaxV2tpWLMu8upSSqNgSPCo85cg/viewform">
           Give feedback
         </a>
