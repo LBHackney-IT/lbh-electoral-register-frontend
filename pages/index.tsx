@@ -14,7 +14,7 @@ const Dashboard = (): JSX.Element => {
         <div className="govuk-grid-row govuk-!-margin-bottom-7">
           <div className="govuk-grid-column-one-third">
             <a href="/">
-              <div className="lbh-stat hover-darker-grey">
+              <div className="lbh-stat">
                 <strong
                   className="lbh-stat__value"
                   aria-labelledby="stat-1-caption"
