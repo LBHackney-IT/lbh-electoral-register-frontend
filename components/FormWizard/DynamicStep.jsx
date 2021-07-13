@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Button from 'components/Button/Button';
 import DynamicInput from 'components/FormWizard/DynamicInput';
 import DynamicInputMulti from 'components/FormWizard/DynamicInputMulti';
+import ErrorSummary from 'components/ErrorSummary/ErrorSummary';
 
 import styles from './DynamicStep.module.scss';
 
@@ -52,6 +53,7 @@ const DynamicStep = ({
         onSubmit={handleSubmit((data) => onStepSubmit(sanitiseData(data)))}
       >
         <div className="govuk-form-group">
+          <ErrorSummary title="There is a problem"></ErrorSummary>
           {components?.map(
             ({
               conditionalRender,
