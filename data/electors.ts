@@ -79,7 +79,6 @@ export const electors: Elector[] = [
   },
 ];
 
-<<<<<<< HEAD
 export const headers = [
   { label: 'Address line 1', key: 'address_ln1' },
   { label: 'Address line 2', key: 'address_ln2' },
@@ -118,7 +117,7 @@ export const headers = [
   { label: 'Voting by post or proxy?', key: 'voting_proxy_check' },
   { label: 'Voting proxy type', key: 'voting_proxy_type' },
 ];
-=======
+
 export const testElector: Elector = {
   address_ln1: 'Test address_ln1',
   address_ln2: 'Test address_ln2',
@@ -145,9 +144,8 @@ export const testElector: Elector = {
   reasons: 'Test reasons',
   signature_date: 'Test signature_date',
   time_created: 'Test time_created',
-  urn: 'Test-urn',
+  urn: 'Test urn',
   verification_date: 'Test verification_date',
   voting_proxy_check: true,
   voting_proxy_type: 'Test voting_proxy_type',
 };
->>>>>>> 512281c (created test elector for testing purposes)
