@@ -25,7 +25,7 @@ const ExportRegister = (): React.ReactElement => {
   return (
     <div className="govuk-grid-row">
       <div className="govuk-grid-column-one-quarter">
-        <SideNav active="upload" />
+        <SideNav active="export" />
       </div>
       <div className="govuk-grid-column-three-quarters">
         <h2 className="lbh-header__title govuk-!-margin-bottom-5">
