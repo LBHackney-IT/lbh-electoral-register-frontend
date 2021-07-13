@@ -35,10 +35,12 @@ const UploadApplication = (): React.ReactElement => {
       <div className="govuk-grid-column-three-quarters">
         {errorMessage === true && <ErrorMessage label="Please select a file" />}
         <form onSubmit={onFormSubmit}>
+          <h2 className="lbh-header__title govuk-!-margin-bottom-5">
+            Upload a scanned application
+          </h2>
           <FileUpload
             name="upload_files"
             width="30"
-            label="Upload a scanned application"
             onChange={handleFileInput}
           />
           <Button type="submit" label="Submit"></Button>
