@@ -38,9 +38,9 @@ functions:
     environment:
       GSSO_URL: ${ssm:/lbh-electoral-register/${self:provider.stage}/gsso-url}
       GSSO_TOKEN_NAME: ${ssm:/lbh-electoral-register/${self:provider.stage}/gsso-token-name}
-      HACKNEY_JWT_SECRET: ${ssm:/lbh-electoral-register/${self:provider.stage}/hackney-jwt}
-      AUTHORISED_GROUP: ${ssm:/lbh-electoral-register/${self:provider.stage}/authorised-dev-group}
-      REDIRECT_URL: ${ssm:/lbh-electoral-register/${self:provider.stage}/redirect_url}
+      HACKNEY_JWT_SECRET: ${ssm:/lbh-electoral-register/${self:provider.stage}/hackney-jwt-secret}
+      AUTHORISED_GROUP: ${ssm:/lbh-electoral-register/${self:provider.stage}/authorised-group}
+      REDIRECT_URL: ${ssm:/lbh-electoral-register/${self:provider.stage}/redirect-url}
 resources:
   Resources:
     CloudFrontDistribution:
@@ -96,8 +96,8 @@ custom:
     staging: arn:aws:acm:us-east-1:715003523189:certificate/8f7fa30c-a4e5-4775-b827-ade824a33c9a
   securityGroups:
     staging:
-      - qq
+      - sg-0d9f32775410e6d00
   subnets:
     staging:
-      - qq
-      - qq
+      - subnet-0da40e73f58096370
+      - subnet-0a9971ade82211dfa

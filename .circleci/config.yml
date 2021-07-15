@@ -68,7 +68,7 @@ jobs:
     steps:
       - checkout
       - aws_assume_role/assume_role:
-          account: $AWS_ACCOUNT_STAGING
+          account: $AWS_ACCOUNT_ELECTORAL_POC
           profile_name: default
           role: 'LBH_Circle_CI_Deployment_Role'
       - persist_to_workspace:
@@ -96,7 +96,7 @@ workflows:
           requires:
             - unit-tests
       - assume-role-staging:
-          context: api-assume-role-staging-context
+          context: electoral-poc-development-context
           requires:
             - build
           filters:
