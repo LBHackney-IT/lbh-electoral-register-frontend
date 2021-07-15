@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import App, { AppInitialProps, AppContext, AppProps } from 'next/app';
+=======
+import type { AppProps } from 'next/app';
+
+import 'stylesheets/all.scss';
+>>>>>>> eae7640 (refactored css and removed unused styles)
 import Layout from 'components/Layout';
 import { AuthProvider } from 'components/UserContext/UserContext';
 import { ErrorBoundary } from 'components/ErrorBoundary/ErrorBoundary';

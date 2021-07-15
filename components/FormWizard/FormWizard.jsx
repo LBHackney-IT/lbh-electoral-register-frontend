@@ -8,6 +8,8 @@ import { createSteps, getNextStepPath, haveStepsChanged } from 'utils/steps';
 import { deepmerge } from 'utils/objects';
 import { getQueryString } from 'utils/urls';
 import { getFormData, saveData } from 'utils/saveData';
+import cx from 'classnames';
+import styles from './FormWizard.module.scss';
 
 const FormWizard = ({
   formPath,
@@ -65,7 +67,10 @@ const FormWizard = ({
           <legend className="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1
               id="step-title"
-              className="govuk-fieldset__heading govuk-!-margin-0 form-step-heading"
+              className={cx(
+                'govuk-fieldset__heading govuk-!-margin-0',
+                styles.heading
+              )}
             >
               {step.title}
             </h1>
