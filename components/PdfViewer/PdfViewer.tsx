@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import cx from 'classnames';
+import styles from './PdfViewer.module.scss';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 interface Props {
@@ -33,17 +35,22 @@ const PdfViewer = ({ file }: Props): JSX.Element => {
       <Document file={file.url} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
+<<<<<<< HEAD
       <div className="page-controls lbh-simple-pagination govuk-!-margin-top-3">
         <button
           className="lbh-simple-pagination__link"
           onClick={prevPage}
           data-testid="prev-button"
         >
+=======
+      <div className={cx('page-controls lbh-simple-pagination govuk-!-margin-top-3', styles.pageControls)}>
+        <button className="lbh-simple-pagination__link" onClick={prevPage}>
+>>>>>>> e7106b4 (moved css to modules and removed outdated styles)
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
             <path d="M10 1L2 9.5L10 18" strokeWidth="2" />
           </svg>
         </button>
-        <p className="lbh-simple-pagination__link page-indicator">
+        <p className={cx('lbh-simple-pagination__link page-indicator', styles.pageNumbers)}>
           {pageNumber} of {numPages}
         </p>
         <button

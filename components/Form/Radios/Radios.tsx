@@ -26,7 +26,7 @@ const Radios = ({
       })}
     >
       <label
-        className={`lbh-label govuk-label govuk-label--${labelSize} radios-label-extra-margin`}
+        className={`lbh-label govuk-label govuk-label--${labelSize} govuk-!-margin-bottom-2`}
         htmlFor={name}
       >
         {label} {required && <span className="govuk-required">*</span>}
@@ -51,7 +51,7 @@ const Radios = ({
               ? { value: option, text: option }
               : option;
           return (
-            <div className="govuk-radios__item" key={text}>
+            <div className="govuk-radios__item govuk-!-margin-bottom-1" key={text}>
               <input
                 className={cx('govuk-radios__input', {
                   'govuk-input--error': error,

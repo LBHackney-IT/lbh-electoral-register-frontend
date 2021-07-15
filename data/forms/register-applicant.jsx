@@ -139,7 +139,6 @@ export default {
           rules: { required: false, min: '2000-13-13' },
         },
         {
-          conditionalRender: (data) => data.dob === null,
           component: 'Radios',
           name: 'previous_address_overseas',
           label:

@@ -27,26 +27,8 @@ a {
   cursor: pointer;
 }
 
-.govuk-tag:not([class*='govuk-tag--']) {
-  background-color: #00513f;
-}
-
 .govuk-required {
   color: #d21b1b;
-}
-
-.lbh-table-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.cancel-icon {
-  width: 20px;
-  height: 20px;
-  top: 5px;
-  position: relative;
-  cursor: pointer;
 }
 
 .sticky {
@@ -66,57 +48,20 @@ a {
   height: 0;
 }
 
-.page-controls button {
-  background-color: transparent;
-  border: none;
-}
-
-.page-indicator {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.lbh-page-announcement__title {
-  font-size: 1.2rem;
-  line-height: 2.5rem;
-}
-
 .govuk-form-group.lbh-form-group {
   margin: 16px auto;
 }
 
-.govuk-date-input__label {
-  margin: 0;
-}
-
-.govuk-fieldset__legend:not(.govuk-fieldset__legend--m):not(.govuk-fieldset__legend--l):not(.govuk-fieldset__legend--xl)
-  + .govuk-hint {
-  margin-bottom: 0;
-}
-
-.govuk-radios__item {
-  margin-bottom: 4px;
-}
-
-.radios-label-extra-margin {
-  margin-bottom: 10px;
-  margin-bottom: 0.6rem;
-}
-
-.lbh-form-group .govuk-label.govuk-date-input__label {
-  margin-top: 0px;
-}
-
-.govuk-summary-list__key {
+.half-width {
   width: 50%;
 }
 
-.govuk-summary-list__value {
+.half-width:last-child {
   width: 50%;
 }
 
-.govuk-summary-list__value:last-child {
-  width: 50%;
+.govuk-summary-list__value:last-child.edit-column {
+  width: 10%;
 }
 
 .text-align-right {
@@ -131,8 +76,4 @@ a {
 
 .hover-darker-grey:hover {
   background-color: lbh-colour(lbh-grey-2);
-}
-
-.govuk-summary-list__value:last-child.edit-column {
-  width: 10%;
 }

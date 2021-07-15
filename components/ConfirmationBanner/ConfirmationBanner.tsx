@@ -5,7 +5,7 @@ export interface Props {
 
 const ConfirmationBanner = ({ title, content }: Props): React.ReactElement => (
   <section className="lbh-page-announcement">
-    <h3 className="lbh-page-announcement__title">{title}</h3>
+    <h4 className="lbh-page-announcement__title">{title}</h4>
     <div className="lbh-page-announcement__content">{content}</div>
   </section>
 );
