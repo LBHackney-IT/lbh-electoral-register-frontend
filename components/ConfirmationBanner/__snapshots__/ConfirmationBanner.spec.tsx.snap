@@ -5,11 +5,11 @@ exports[`ConfirmationBanner should title and content properly 1`] = `
   <section
     class="lbh-page-announcement"
   >
-    <h3
+    <h4
       class="lbh-page-announcement__title"
     >
       This is the title
-    </h3>
+    </h4>
     <div
       class="lbh-page-announcement__content"
     >

@@ -15,7 +15,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Name
         </dt>
@@ -43,7 +43,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Address
         </dt>
@@ -74,7 +74,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Lives at another address?
         </dt>
@@ -95,7 +95,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Moved house in the last 12 months?
         </dt>
@@ -116,7 +116,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Previous Address
         </dt>
@@ -152,7 +152,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Contact details
         </dt>
@@ -178,7 +178,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Nationality
         </dt>
@@ -199,7 +199,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Date of birth
         </dt>
@@ -220,7 +220,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           National insurance number
         </dt>
@@ -241,7 +241,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Reasons for no nationality, date of birth, or national insurance number
         </dt>
@@ -262,7 +262,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Previous name
         </dt>
@@ -288,7 +288,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Voting by post or proxy?
         </dt>
@@ -309,7 +309,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Open register preference
         </dt>
@@ -337,7 +337,7 @@ exports[`ViewElectorTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Applicant signature provided?
         </dt>
