@@ -35,13 +35,23 @@ const PdfViewer = ({ file }: Props): JSX.Element => {
       <Document file={file.url} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
-      <div className={cx('page-controls lbh-simple-pagination govuk-!-margin-top-3', styles.pageControls)}>
+      <div
+        className={cx(
+          'page-controls lbh-simple-pagination govuk-!-margin-top-3',
+          styles.pageControls
+        )}
+      >
         <button className="lbh-simple-pagination__link" onClick={prevPage}>
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
             <path d="M10 1L2 9.5L10 18" strokeWidth="2" />
           </svg>
         </button>
-        <p className={cx('lbh-simple-pagination__link page-indicator', styles.pageNumbers)}>
+        <p
+          className={cx(
+            'lbh-simple-pagination__link page-indicator',
+            styles.pageNumbers
+          )}
+        >
           {pageNumber} of {numPages}
         </p>
         <button
