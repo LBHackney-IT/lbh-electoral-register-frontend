@@ -146,7 +146,7 @@ export default {
         },
         {
           component: 'Radios',
-          name: 'previous_address_overseas',
+          name: 'age_range',
           label:
             'If you do not know the date of birth, please tick the correct group',
           options: [
