@@ -71,6 +71,10 @@ const DynamicStep = ({
       text: 'No value is selected indicating whether the elector moved house in the last 12 months',
       href: '#moved_house',
     },
+    signature: {
+      text: 'The elector must provide a signature for the application to be submitted',
+      href: '#signature'
+    }
   };
 
   const displayErrors = () => {
