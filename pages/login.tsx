@@ -13,7 +13,7 @@ const AdminLoginPage = ({ gssoUrl, returnUrl }: Props): React.ReactElement => (
     <h1>Sign in</h1>
     <a
       href={`${gssoUrl}${returnUrl}`}
-      className="govuk-button lbh-button  lbh-button--start govuk-button--start"
+      className="govuk-button lbh-button lbh-button--start govuk-button--start"
     >
       Sign in with Google
       <svg
@@ -29,9 +29,9 @@ const AdminLoginPage = ({ gssoUrl, returnUrl }: Props): React.ReactElement => (
       </svg>
     </a>
 
-    <p className="lbh-body">Please sign in with your Hackney email account.</p>
+    <p className="lbh-body govuk-!-margin-top-3">Please sign in with your Hackney email account.</p>
 
-    <p className="lbh-body">
+    <p className="lbh-body govuk-!-margin-top-3">
       Please contact your manager if you have issues signing in.
     </p>
   </>
