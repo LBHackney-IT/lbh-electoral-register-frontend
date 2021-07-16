@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const FileViewer = ({ file }: Props): JSX.Element => {
+const PdfViewer = ({ file }: Props): JSX.Element => {
   const [numPages, setNumPages] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -60,4 +60,4 @@ const FileViewer = ({ file }: Props): JSX.Element => {
   );
 };
 
-export default FileViewer;
+export default PdfViewer;

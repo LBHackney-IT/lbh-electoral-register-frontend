@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import FormWizard from 'components/FormWizard/FormWizard';
 import form from 'data/forms/register-applicant';
 import { format } from 'date-fns';
-import FileViewer from 'components/FileViewer/FileViewer';
+import PdfViewer from 'components/PdfViewer/PdfViewer';
 
 const RegisterApplicant = () => {
   const currentDateTime = () => {
@@ -39,7 +39,7 @@ const RegisterApplicant = () => {
           />
         </div>
         <div className="govuk-grid-column-one-half reference-image sticky">
-          <FileViewer
+          <PdfViewer
             file={{
               url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/931882/Register-to-vote-if-youre-living-in-England.pdf',
             }}
