@@ -51,7 +51,10 @@ const Radios = ({
               ? { value: option, text: option }
               : option;
           return (
-            <div className="govuk-radios__item govuk-!-margin-bottom-1" key={text}>
+            <div
+              className="govuk-radios__item govuk-!-margin-bottom-1"
+              key={text}
+            >
               <input
                 className={cx('govuk-radios__input', {
                   'govuk-input--error': error,

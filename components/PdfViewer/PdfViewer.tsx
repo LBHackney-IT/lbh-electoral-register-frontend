@@ -35,17 +35,8 @@ const PdfViewer = ({ file }: Props): JSX.Element => {
       <Document file={file.url} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
-<<<<<<< HEAD
-      <div className="page-controls lbh-simple-pagination govuk-!-margin-top-3">
-        <button
-          className="lbh-simple-pagination__link"
-          onClick={prevPage}
-          data-testid="prev-button"
-        >
-=======
       <div className={cx('page-controls lbh-simple-pagination govuk-!-margin-top-3', styles.pageControls)}>
         <button className="lbh-simple-pagination__link" onClick={prevPage}>
->>>>>>> e7106b4 (moved css to modules and removed outdated styles)
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
             <path d="M10 1L2 9.5L10 18" strokeWidth="2" />
           </svg>

@@ -47,5 +47,5 @@ export const FieldErrorMessage: React.FC<Props> = ({
 
   const message = generateErrorMessage(action, isSingular, error, label);
 
-  return <ErrorMessage label={message} className='govuk-!-margin-bottom-2' />;
+  return <ErrorMessage label={message} className="govuk-!-margin-bottom-2" />;
 };
