@@ -15,6 +15,7 @@ export default {
           width: '30',
           label: 'First name(s)',
           rules: { required: true },
+          id: 'first_name',
         },
         {
           component: 'TextInput',
@@ -22,6 +23,7 @@ export default {
           width: '30',
           label: 'Last name',
           rules: { required: true },
+          id: 'last_name',
         },
       ],
     },
@@ -34,6 +36,7 @@ export default {
           name: 'address_ln1',
           label: 'Number and Street',
           rules: { required: true },
+          id: 'address_ln1',
         },
         {
           component: 'TextInput',
@@ -45,16 +48,18 @@ export default {
           name: 'postcode',
           label: 'Postcode',
           rules: { required: true },
+          id: 'postcode',
         },
         {
           component: 'Radios',
-          name: 'lived_at_another_address',
+          name: 'lives_at_another_address',
           label: 'Does the elector live at another address?',
           options: [
             { value: 'Y', text: 'Yes' },
             { value: 'N', text: 'No' },
           ],
           rules: { required: true },
+          id: 'lives_at_another_address',
         },
       ],
     },
@@ -71,6 +76,7 @@ export default {
             { value: 'N', text: 'No' },
           ],
           rules: { required: true },
+          name: 'moved_house',
         },
         {
           conditionalRender: (data) => data.moved_house === 'Y',
@@ -136,7 +142,7 @@ export default {
           id: 'myDate',
           label: 'Date of birth',
           hint: 'For example, 31 03 1980',
-          rules: { required: false, min: '2000-13-13' },
+          rules: { required: false },
         },
         {
           component: 'Radios',
@@ -217,12 +223,13 @@ export default {
       components: [
         {
           component: 'Checkbox',
-          name: 'declaration',
+          name: 'signature',
           label: 'Applicant signature provided?',
           rules: { required: true },
+          id: 'signature',
         },
         {
-          conditionalRender: (data) => data.declaration === true,
+          conditionalRender: (data) => data.signature === true,
           component: 'DateInput',
           name: 'signature_date',
           label: 'Date application signed',
