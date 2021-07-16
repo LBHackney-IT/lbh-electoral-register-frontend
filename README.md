@@ -15,7 +15,11 @@ It requires Node v14 or greater.
 To run locally:
 
 1. Run `npm install` to install dependencies
+<<<<<<< HEAD
 1. Run the app with `npm run dev`. It should be available on [http://dev.hackney.gov.uk:3000](http://dev.hackney.gov.uk:3000)
+=======
+2. Run the app with `npm run dev`. It should be available on [http://dev.hackney.gov.uk:3000](http://dev.hackney.gov.uk:3000)
+>>>>>>> 98a2f27 (fixed typos and formatting)
 
 ## Authentication
 
@@ -23,6 +27,7 @@ The app is integrated with [Hackney's Google SSO service](https://github.com/LBH
 For the production environments, the environment variables specified in `env.sample` should be set appropriately.
 For local running, this can be bypassed by setting the environment variable `BYPASS_AUTHENTICATION=true`. This is already done
 in `env.development.local`, which will be picked up by the dev running command.
+<<<<<<< HEAD
 
 ### Authentication environment values
 
@@ -30,6 +35,8 @@ in `env.development.local`, which will be picked up by the dev running command.
 | --- | --- |
 | GSSO_URL | https://auth.hackney.gov.uk/auth?redirect_uri= |
 | GSSO_TOKEN_NAME | hackneyToken |
+=======
+>>>>>>> 98a2f27 (fixed typos and formatting)
 
 ## Deployment
 

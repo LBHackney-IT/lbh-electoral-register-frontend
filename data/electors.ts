@@ -70,7 +70,7 @@ export const electors: Elector[] = [
     phone_input: '071099177600',
     postcode: 'E9 6AS',
     reasons: '',
-    signature: boolean;
+    signature: true,
     signature_date: '2021-06-21',
     time_created: '2021-06-22 11:48:54',
     urn: 'af884-e15b-415-c84-b5ce0e7d8a4',
@@ -84,7 +84,7 @@ export const headers = [
   { label: 'Address line 2', key: 'address_ln2' },
   { label: 'Changed name?', key: 'changed_name' },
   { label: 'Age range', key: 'age_range' },
-  { label: 'Singature?', key: 'signature' },
+  { label: 'Signature?', key: 'signature' },
   { label: 'Date of birth', key: 'dob' },
   { label: 'Email address', key: 'email_address' },
   { label: 'First name', key: 'first_name' },
