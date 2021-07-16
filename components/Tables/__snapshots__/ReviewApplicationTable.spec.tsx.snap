@@ -10,12 +10,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Name
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -28,12 +28,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Address
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -56,12 +56,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Lives at another address?
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -74,12 +74,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Moved house in the last 12 months?
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -92,12 +92,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Previous Address
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -125,12 +125,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Contact details
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -148,12 +148,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Nationality
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -166,12 +166,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Date of birth
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -184,12 +184,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           National insurance number
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -202,12 +202,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Reasons for no nationality, date of birth, or national insurance number
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -220,12 +220,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Previous name
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -243,12 +243,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Voting by post or proxy?
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -261,12 +261,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Do not want to be included in the open register?
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"
@@ -279,12 +279,12 @@ exports[`ReviewApplicationTable should render elector data properly 1`] = `
         class="govuk-summary-list__row"
       >
         <dt
-          class="govuk-summary-list__key"
+          class="govuk-summary-list__key half-width"
         >
           Applicant signature provided?
         </dt>
         <dd
-          class="govuk-summary-list__value"
+          class="govuk-summary-list__value half-width"
         >
           <p
             class="govuk-body"

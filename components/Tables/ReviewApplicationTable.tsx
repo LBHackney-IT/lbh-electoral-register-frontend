@@ -11,8 +11,8 @@ export interface TableRowProps {
 
 const TableRow = ({ name, content }: TableRowProps): React.ReactElement => (
   <div className="govuk-summary-list__row">
-    <dt className="govuk-summary-list__key">{name}</dt>
-    <dd className="govuk-summary-list__value">
+    <dt className="govuk-summary-list__key half-width">{name}</dt>
+    <dd className="govuk-summary-list__value half-width">
       {content.map((row, index) => (
         <p key={`${name}-${index}`} className="govuk-body">
           {row}

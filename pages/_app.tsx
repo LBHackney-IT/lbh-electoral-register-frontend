@@ -5,10 +5,7 @@ import { AuthProvider } from 'components/UserContext/UserContext';
 import { ErrorBoundary } from 'components/ErrorBoundary/ErrorBoundary';
 import type { User } from 'types';
 import { isAuthorised, shouldRedirect } from 'utils/auth';
-
-import 'styles/globals.css';
 import 'stylesheets/all.scss';
-import 'stylesheets/header.scss';
 
 interface Props {
   user?: Partial<User>;

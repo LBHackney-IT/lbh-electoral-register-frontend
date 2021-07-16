@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+import styles from './TimesCircle.module.scss';
 
 const colors = {
   default: '#000',
@@ -12,7 +13,7 @@ interface Props {
 
 const TimesCircleIcon = ({ color = 'default' }: Props): React.ReactElement => (
   <svg
-    className="cancel-icon"
+    className={styles.cancelIcon}
     height="512pt"
     viewBox="0 0 512 512"
     width="512pt"

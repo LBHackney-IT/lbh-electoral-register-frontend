@@ -42,7 +42,9 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
           <a
             className={cx(
               'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-              active === navLink.key ? styles.active : ''
+              {
+                [styles.active]: active === navLink.key,
+              }
             )}
             href={navLink.link}
           >
