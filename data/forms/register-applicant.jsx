@@ -76,7 +76,7 @@ export default {
             { value: 'N', text: 'No' },
           ],
           rules: { required: true },
-          name: 'moved_house',
+          id: 'moved_house',
         },
         {
           conditionalRender: (data) => data.moved_house === 'Y',

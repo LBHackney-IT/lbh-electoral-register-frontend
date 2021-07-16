@@ -73,8 +73,8 @@ const DynamicStep = ({
     },
     signature: {
       text: 'The elector must provide a signature for the application to be submitted',
-      href: '#signature'
-    }
+      href: '#signature',
+    },
   };
 
   const displayErrors = () => {
