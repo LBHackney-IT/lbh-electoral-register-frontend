@@ -8,7 +8,7 @@ interface Props {
   };
 }
 
-const FileViewer = ({ file }: Props): JSX.Element => {
+const PdfViewer = ({ file }: Props): JSX.Element => {
   const [numPages, setNumPages] = useState(1);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -34,7 +34,11 @@ const FileViewer = ({ file }: Props): JSX.Element => {
         <Page pageNumber={pageNumber} />
       </Document>
       <div className="page-controls lbh-simple-pagination govuk-!-margin-top-3">
-        <button className="lbh-simple-pagination__link" onClick={prevPage}>
+        <button
+          className="lbh-simple-pagination__link"
+          onClick={prevPage}
+          data-testid="prev-button"
+        >
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
             <path d="M10 1L2 9.5L10 18" strokeWidth="2" />
           </svg>
@@ -45,6 +49,7 @@ const FileViewer = ({ file }: Props): JSX.Element => {
         <button
           className="lbh-simple-pagination__link lbh-simple-pagination__link--next"
           onClick={nextPage}
+          data-testid="next-button"
         >
           <svg width="11" height="19" viewBox="0 0 11 19" fill="none">
             <path d="M1 18L9 9.5L1 1" strokeWidth="2" />
@@ -55,4 +60,4 @@ const FileViewer = ({ file }: Props): JSX.Element => {
   );
 };
 
-export default FileViewer;
+export default PdfViewer;

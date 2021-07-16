@@ -45,8 +45,8 @@ const EditOpenRegisterPreference = (): React.ReactElement => {
                 route={`/view-elector/${elector.urn}`}
                 query={{
                   electorId: elector.urn,
-                  status: 'success',
                   edit: 'open-register',
+                  status: 'success',
                 }}
                 className="govuk-!-margin-right-1"
               ></LinkButton>

@@ -1,7 +1,8 @@
 import cx from 'classnames';
+import styles from './SideNav.module.scss';
 
 export interface SideNavProps {
-  active: string;
+  active?: string;
 }
 
 export interface NavLink {
@@ -41,9 +42,7 @@ const SideNav = ({ active }: SideNavProps): JSX.Element => {
           <a
             className={cx(
               'govuk-link lbh-link govuk-link--no-visited-state lbh-link--no-visited-state govuk-link--no-underline',
-              {
-                active: active === navLink.key,
-              }
+              active === navLink.key ? styles.active : ''
             )}
             href={navLink.link}
           >

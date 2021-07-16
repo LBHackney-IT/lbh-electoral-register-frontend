@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchRegisterTable should render elector data properly 1`] = `
+<DocumentFragment>
+  <table
+    class="govuk-table"
+  >
+    <thead
+      class="govuk-table__head"
+    >
+      <tr
+        class="govuk-table_register_row"
+      >
+        <th
+          class="govuk-table__header"
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          class="govuk-table__header"
+          scope="col"
+        >
+          Address
+        </th>
+        <th
+          class="govuk-table__header"
+          scope="col"
+        >
+          Verification date
+        </th>
+        <th
+          class="govuk-table__header"
+          scope="col"
+        />
+      </tr>
+    </thead>
+    <tbody
+      class="govuk-table__body"
+    >
+      <tr
+        class="govuk-table__row"
+      >
+        <td
+          class="govuk-table__cell"
+        >
+          Test first_name Test last_name
+        </td>
+        <td
+          class="govuk-table__cell"
+        >
+          Test address_ln1, Test postcode
+        </td>
+        <td
+          class="govuk-table__cell"
+        >
+          Test verification_date
+        </td>
+        <td
+          class="govuk-table__cell text-align-right"
+        >
+          <button
+            class="lbh-button govuk-button btn-smaller govuk-!-margin-top-2"
+            data-module="govuk-button"
+          >
+            Add to register
+          </button>
+          <button
+            class="govuk-button lbh-button govuk-button--secondary lbh-button--secondary btn-smaller govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+            data-module="govuk-button"
+            draggable="false"
+            role="button"
+          >
+            Review
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
