@@ -29,7 +29,9 @@ const AdminLoginPage = ({ gssoUrl, returnUrl }: Props): React.ReactElement => (
       </svg>
     </a>
 
-    <p className="lbh-body govuk-!-margin-top-3">Please sign in with your Hackney email account.</p>
+    <p className="lbh-body govuk-!-margin-top-3">
+      Please sign in with your Hackney email account.
+    </p>
 
     <p className="lbh-body govuk-!-margin-top-3">
       Please contact your manager if you have issues signing in.
