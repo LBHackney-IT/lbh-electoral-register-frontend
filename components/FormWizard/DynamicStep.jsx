@@ -78,19 +78,15 @@ const DynamicStep = ({
   };
 
   const displayErrors = () => {
-    let counter = 0;
+    const links = [];
     for (const error in errors) {
-      counter += 1;
+      links.push(errorMessages[error]);
     }
-    if (counter > 0) {
-      let links = [];
-      for (const error in errors) {
-        links.push(errorMessages[error]);
-      }
-      return (
-        <ErrorSummary title="There is a problem" links={links}></ErrorSummary>
-      );
-    }
+    return links.length ? (
+      <ErrorSummary title="There is a problem" links={links}></ErrorSummary>
+    ) : (
+      ''
+    );
   };
 
   return (
