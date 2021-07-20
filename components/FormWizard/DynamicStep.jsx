@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Button from 'components/Button/Button';
 import DynamicInput from 'components/FormWizard/DynamicInput';
 import DynamicInputMulti from 'components/FormWizard/DynamicInputMulti';
+import ErrorSummary from 'components/ErrorSummary/ErrorSummary';
 
 import styles from './DynamicStep.module.scss';
 
@@ -45,12 +46,56 @@ const DynamicStep = ({
     router.back();
   };
 
+  const errorMessages = {
+    first_name: {
+      text: 'First name is blank',
+      href: '#first_name',
+    },
+    last_name: {
+      text: 'Last name is blank',
+      href: '#last_name',
+    },
+    address_ln1: {
+      text: 'Address is blank',
+      href: '#address_ln1',
+    },
+    postcode: {
+      text: 'Postcode is blank',
+      href: '#postcode',
+    },
+    lives_at_another_address: {
+      text: 'No value is selected indicating whether or not the elector lives at another address',
+      href: '#lives_at_another_address',
+    },
+    moved_house: {
+      text: 'No value is selected indicating whether the elector moved house in the last 12 months',
+      href: '#moved_house',
+    },
+    signature: {
+      text: 'The elector must provide a signature for the application to be submitted',
+      href: '#signature',
+    },
+  };
+
+  const displayErrors = () => {
+    const links = [];
+    for (const error in errors) {
+      links.push(errorMessages[error]);
+    }
+    return links.length ? (
+      <ErrorSummary title="There is a problem" links={links}></ErrorSummary>
+    ) : (
+      ''
+    );
+  };
+
   return (
     <>
       <form
         role="form"
         onSubmit={handleSubmit((data) => onStepSubmit(sanitiseData(data)))}
       >
+        {displayErrors()}
         <div className="govuk-form-group">
           {components?.map(
             ({

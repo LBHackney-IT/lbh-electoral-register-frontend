@@ -62,7 +62,7 @@ const ViewElectorTable = ({
         />
         <TableRow
           name="Lives at another address?"
-          content={[elector.lived_at_another_address === 'Y' ? 'Yes' : 'No']}
+          content={[elector.lives_at_another_address === 'Y' ? 'Yes' : 'No']}
         />
         <TableRow
           name="Moved house in the last 12 months?"

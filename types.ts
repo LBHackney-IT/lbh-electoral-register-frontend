@@ -270,12 +270,11 @@ export interface Elector {
   address_ln2?: string;
   age_range?: string;
   changed_name?: boolean;
-  declaration: boolean;
   dob?: string;
   email_address?: string;
   first_name: string;
   last_name: string;
-  lived_at_another_address: string;
+  lives_at_another_address: string;
   moved_house: string;
   nationality?: string;
   nino?: string;
@@ -289,6 +288,7 @@ export interface Elector {
   previous_name_date?: string;
   previous_postcode?: string;
   reasons?: string;
+  signature: boolean;
   signature_date?: string;
   time_created: string;
   urn: string;
