@@ -25,6 +25,7 @@ The project uses Prettier for formatting, and ESLint for linting. The CI server 
 
 The app is integrated with [Hackney's Google SSO service](https://github.com/LBHackney-IT/LBH-Google-auth).
 For the production environments, the environment variables specified in `env.sample` should be set appropriately.
+The google group currently set up for the app is "saml-electoral-management-system" - in future we may need separate groups for different environments (or different user groups).
 For local running, this can be bypassed by setting the environment variable `BYPASS_AUTHENTICATION=true`. This is already done
 in `env.development.local`, which will be picked up by the dev running command.
 
