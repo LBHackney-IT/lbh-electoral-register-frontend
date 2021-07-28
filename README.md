@@ -53,6 +53,14 @@ The code follows a broadly standard structure for a Next.js app. Jest is used fo
 
 To help in getting a prototype working quickly, the form components in this project and the associated helper classes were taken from https://github.com/LBHackney-IT/lbh-social-care-frontend, with some modifications made.
 
+### Integrations
+
+See the architecture document for more details. In brief, this frontend is planned to integrate in future with:
+
+- The electoral register API (repo created at https://github.com/LBHackney-IT/electoral-register-api containing the draft API spec, but no code implemented yet)
+- The IER wrapper API (not yet created)
+- The IER polling lambda (not yet created)
+
 ### Open tasks
 
 This is a list of code cleanup/bug fix tasks that weren't completed in the first phase:
@@ -69,5 +77,5 @@ This is a list of code cleanup/bug fix tasks that weren't completed in the first
 These are the expected next steps in moving this proof-of-concept towards a full app:
 
 - Replace the mocked-out data in the current journeys with calls to API endpoints on the server-side
-- Hook those server-side endpoints up to external APIs
+- Hook those server-side endpoints up to external APIs (See the swagger spec in https://github.com/LBHackney-IT/electoral-register-api for details of the endpoints on that API)
 - Review the existing code for consistency with Hackney's overall approach to front-end structure
